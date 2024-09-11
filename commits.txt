@@ -6,7 +6,7 @@
 
 # Tipos de commits
 * build: Mudanças que afetam o sistema de build ou dependências externas (exemplos de escopos: gulp, broccoli, npm)
-* ci: Mudanças em arquivos e scripts de configuração de CI (exemplos de escopos: Travis, Circle, BrowserStack, SauceLabs)
+* conf: Mudanças em arquivos e scripts de configuração
 * chore: Mudanças que não alteram o código-fonte ou testes, como alterações no processo de build, ferramentas auxiliares, bibliotecas
 * docs: Apenas alterações na documentação
 * feat: Uma nova funcionalidade
