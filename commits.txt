@@ -16,4 +16,4 @@
 * revert: Reverter algo
 * style: Mudanças que não afetam o significado do código (espaços em branco, formatação, ponto e vírgula ausente, etc)
 * test: Adição de testes ausentes ou correção de testes existentes
-
+* assets: Adição de arquivos "suporte" como midias
