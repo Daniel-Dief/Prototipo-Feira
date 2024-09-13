@@ -1,10 +1,17 @@
-import { InputStyle } from './style'
+import { DivStyle, InputStyle, ShowPassStyle } from './style'
 
-export default function Input() {
+export default function InputLogin() {
 
     return(
-      <div>
-        <InputStyle placeholder="Teste" type='Text'/>
-      </div>
+      <body>
+        <DivStyle>
+          <InputStyle placeholder='Teste email' type='email'/>
+        </DivStyle>
+        <DivStyle>
+          <InputStyle placeholder='Teste senha' type='password'/>
+          <ShowPassStyle />
+        </DivStyle>
+      </body>
+      
     );
   }
