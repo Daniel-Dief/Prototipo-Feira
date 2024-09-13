@@ -7,7 +7,7 @@ export const ButtonContainer = styled.button`
     padding: 12px;
     border-radius: 24px;
     border: none;
-    background-color: #00000088;
+    background-color: #FFFFFF55;
     width: calc(100% / 3 * 2);
 `
 
