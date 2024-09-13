@@ -1,6 +1,7 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-export const ButtonContainer = styled.button`
+export const ButtonContainer = styled(Link)`
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -9,6 +10,8 @@ export const ButtonContainer = styled.button`
     border: none;
     background-color: #FFFFFF55;
     width: calc(100% / 3 * 2);
+
+    text-decoration: none;
 `
 
 export const Text = styled.p`

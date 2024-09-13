@@ -4,7 +4,7 @@ import { ButtonContainer, Text } from "./style";
 
 export default function StartButton() {
     return (
-       <ButtonContainer>
+       <ButtonContainer to="SignIn">
             <Empty />
             <Text>Iniciar</Text>
             <Icon src={require("../../common/images/rightArrow.png")} />
