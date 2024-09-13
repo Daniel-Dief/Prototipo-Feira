@@ -1,8 +1,6 @@
-import Input from "../../components/inputText/index";
-
 function App() {
   return (
-    <Input />
+    <p>Hello, World!</p>
   );
 }
 
