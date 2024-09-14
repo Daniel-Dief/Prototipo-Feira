@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 import styled from "styled-components";
 
 export const Welcome = styled.h1`
@@ -44,7 +46,7 @@ export const SpanText = styled.span`
     color: #C2AE8F;
 `;
 
-export const Link = styled.a`
+export const SLink = styled(Link)`
     font-family: Inter;
     font-size: 13px;
     font-weight: 600;
