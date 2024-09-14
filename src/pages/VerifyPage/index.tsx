@@ -3,7 +3,7 @@ import { useState } from "react"
 import { Title, SmallText } from "../../common/styles/Text"
 import { Logo } from "../../common/styles/Imgs"
 import CodeVerify from "../../components/Input/CodeVerify"
-import FormButton from "../../components/Buttons/FormButton"
+import { Button } from "../../common/styles/Button"
 
 import { Container, Header } from "./styled"
 
@@ -11,7 +11,7 @@ export default function VerifyPage() {
     const [inputValue, setInputValue] = useState<string | "">("");
 
     function handlePath() {
-        window.location.href = "/Welcome";
+        window.location.href = "/SignIn";
     }
 
     function handleInput(value: string) {
@@ -38,12 +38,12 @@ export default function VerifyPage() {
             <CodeVerify 
                 setInputValue={handleInput}
             />
-            <FormButton
+            <Button
                 onClick={handlePath}
                 disabled={inputValue.length < 5}
             >
                 Verificar
-            </FormButton>
+            </Button>
         </Container>
     )
 }
