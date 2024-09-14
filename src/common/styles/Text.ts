@@ -14,7 +14,6 @@ export const SmallText = styled.p`
     font-size: 12px;
     font-weight: 400;
     line-height: 14.52px;
-    text-align: center;
     color: #71717A;
 `;
 
