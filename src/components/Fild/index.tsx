@@ -1,7 +1,8 @@
 import Input from "../Input/Input";
 import { Label } from "../../common/styles/Text";
+import { Container } from "../../common/styles/Divs";
 
-import { Container, TextRequired } from "./style";
+import { TextRequired } from "./style";
 
 interface FildProps {
     labelText: string;
@@ -12,7 +13,11 @@ interface FildProps {
 
 export default function Fild({ labelText, type, requiered, placeholder } : FildProps) {
     return (
-        <Container>
+        <Container
+            flex_direction="column"
+            align_items="start"
+            gap="8px"
+        >
             <Label>
                 {labelText}
                 {requiered && <TextRequired>*</TextRequired>}
