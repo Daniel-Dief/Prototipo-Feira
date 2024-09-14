@@ -1,4 +1,4 @@
-import { Container } from "./style";
+import { Container } from '../../common/styles/Divs';
 import { Label, SpanText } from "../../common/styles/Text";
 import { Checkbox } from "../../common/styles/Checkbox";
 
@@ -11,11 +11,19 @@ interface CheckBoxProps {
 
 export default function CheckBox({ labelText, checked, onChange, spanText } : CheckBoxProps ) {
     return (
-        <Container>
-            <div>
+        <Container
+            justify_content="space-between"
+            flex_direction="row"
+            gap="16px"
+        >
+            <Container
+                justify_content="space-between"
+                flex_direction="row"
+                gap="8px"
+            >
                 <Checkbox type="checkbox" checked={checked} onChange={onChange} />
                 <Label>{labelText}</Label>
-            </div>
+            </Container>
             <SpanText>
                 {spanText}
             </SpanText>
