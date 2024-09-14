@@ -3,7 +3,7 @@ import { Icon } from "../../../common/styles/Imgs";
 import { ButtonContainer, Text } from "./style";
 
 export default function StartButton() {
-    const path : string = localStorage.getItem("user") ? "/Home" : "/SignIn";
+    const path : string = localStorage.getItem("user") ? "/Home" : "/Verify";
 
     return (
        <ButtonContainer to={path}>

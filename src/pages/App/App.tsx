@@ -1,7 +1,7 @@
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Welcome from "../Welcome";
-import SignIn from "../SignIn";
+import VerifyPage from "../VerifyPage";
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <Routes>
         <Route path="*" element={<Welcome />} />
         <Route path="/Welcome" element={<Welcome />} />
-        <Route path="/SignIn" element={<SignIn />} />
+        <Route path="/Verify" element={<VerifyPage />} />
       </Routes>
     </Router>
   )

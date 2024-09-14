@@ -7,7 +7,7 @@ import FormButton from "../../components/Buttons/FormButton"
 
 import { Container, Header } from "./styled"
 
-export default function SignIn() {
+export default function VerifyPage() {
     const [inputValue, setInputValue] = useState<string | "">("");
 
     function handlePath() {
