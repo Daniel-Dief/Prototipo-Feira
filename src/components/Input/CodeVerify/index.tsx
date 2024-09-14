@@ -1,6 +1,10 @@
 import { Container, Input } from "./style"
 
-export default function CodeVerify() {
+interface CodeVerifyProps {
+    setInputValue: (value: string) => void;
+}
+
+export default function CodeVerify({ setInputValue }: CodeVerifyProps) {
     function handleInput(event: React.ChangeEvent<HTMLInputElement>) {
         const value = parseInt(event.target.value, 10);
         if (value >= 0 && value <= 9) {
@@ -8,13 +12,15 @@ export default function CodeVerify() {
         } else {
             event.target.value = value > 9 ? (value % 10).toString() : "";
         }
-
+        
         if(event.target.value !== "") {
             const nextSibling = event.target.nextElementSibling as HTMLInputElement;
             if (nextSibling) {
                 nextSibling.focus();
             }
         }
+
+        setInputValue(event.target?.value);
     }
 
     return (
