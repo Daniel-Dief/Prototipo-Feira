@@ -1,4 +1,4 @@
-import { Empty } from "../../../common/styles/Empty";
+import { Empty } from "../../../common/styles/Divs";
 import { Icon } from "../../../common/styles/Imgs";
 import { ButtonContainer, Text } from "./style";
 
