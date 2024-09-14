@@ -1,7 +1,7 @@
 import { Logo } from "../../common/styles/Imgs";
 import { Welcome as Title, SmallText } from "../../common/styles/Text";
 import Languages from "../../components/Languages";
-import StartButton from "../../components/StartButton";
+import StartButton from "../../components/Buttons/StartButton";
 
 import { Container, BottomContainer } from "./style";
 
