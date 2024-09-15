@@ -36,4 +36,13 @@ export const Container = styled.div<ContainerProps>`
     gap: ${props => props.gap ? props.gap : "0"};
     flex-direction: ${props => props.flex_direction ? props.flex_direction : "column"};
     justify-content: ${props => props.justify_content ? props.justify_content : "center"};
-`
+`;
+
+export const IconBoxDiv = styled.div`
+    padding: 8px;
+    border-radius: 12px;
+    background-color: #FFFFFF33;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+`;

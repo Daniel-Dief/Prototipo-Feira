@@ -54,3 +54,21 @@ export const SLink = styled(Link)`
     text-align: left;
     color: #C2AE8F;
 `;
+
+export const WhiteSpanText = styled.span`
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 600;
+    line-height: 19.36px;
+    text-align: left;
+    color: #FFF;
+`;
+
+export const WhiteSmallText = styled.p`
+    font-family: Inter;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 14.52px;
+    text-align: left;
+    color: #F4F4F5;
+`
