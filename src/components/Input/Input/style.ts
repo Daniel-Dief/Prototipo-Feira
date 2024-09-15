@@ -7,7 +7,7 @@ export const Container = styled.div`
     padding: 12px;
     gap: 10px;
     border-radius: 12px;
-    background-color: #EFF0F3;
+    background-color: #FFF;
 
     font-family: Inter, sans-serif;
     font-size: 16px;
