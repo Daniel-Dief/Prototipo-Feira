@@ -25,6 +25,7 @@ export const ServiceDiv = styled.div`
     height: 48px;
     padding: 12px;
     gap: 12px;
+    background-color: #FFF;
     border-radius: 12px;
     border: 2px solid #F5F9FF;
 
