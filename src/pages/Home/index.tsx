@@ -3,8 +3,10 @@ import { Container } from "../../common/styles/Divs";
 import Header from "../../components/Header";
 import Expenses from "../../components/Expenses";
 import YourBooking from "../../components/YourBooking";
+import Footer from "../../components/Footer";
 
 import { useEffect } from "react";
+import Services from "../../components/Services";
 
 export default function Home() {
     useEffect(() => {
@@ -22,8 +24,8 @@ export default function Home() {
             <Header />
             <Expenses />
             <YourBooking />
-            <h1>Serviços</h1>
-            <h1>Footer</h1>
+            <Services />
+            <Footer />
         </Container>
     )
 }
