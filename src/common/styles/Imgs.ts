@@ -25,3 +25,8 @@ export const Flag = styled.img`
     height: 20px;
     border-radius: 4px;
 `
+
+export const BigImage = styled.img`
+    width: 128px;
+    height: 128px;
+`
