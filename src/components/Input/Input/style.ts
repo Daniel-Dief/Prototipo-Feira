@@ -1,3 +1,4 @@
+import { Icon } from "../../../common/styles/Imgs";
 import styled from "styled-components";
 
 export const Container = styled.div`
@@ -13,7 +14,11 @@ export const Container = styled.div`
     font-weight: 400;
     line-height: 19.36px;
     text-align: left;
-    `
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+`;
 
 export const SInput = styled.input`
     border: none;
@@ -22,4 +27,8 @@ export const SInput = styled.input`
     color: #71717A;
     width: 100%;
     height: 100%;
-`
+`;
+
+export const CursorIcon = styled(Icon)`
+    cursor: pointer;
+`;
