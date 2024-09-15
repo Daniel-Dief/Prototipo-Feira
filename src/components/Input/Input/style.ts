@@ -20,4 +20,6 @@ export const SInput = styled.input`
     background-color: transparent;
     outline: none;
     color: #71717A;
+    width: 100%;
+    height: 100%;
 `
