@@ -30,3 +30,9 @@ export const BigImage = styled.img`
     width: 128px;
     height: 128px;
 `
+
+export const HotelImage = styled.img`
+    width: 311px;
+    height: 130px;
+    border-radius: 12px;
+`
