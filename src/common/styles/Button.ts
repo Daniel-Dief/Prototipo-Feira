@@ -38,6 +38,8 @@ export const ButtonCreateAccount = styled.button`
     border-radius: 12px;
     border: 2px solid #C2AE8F;
     color: #C2AE8F;
+
+    cursor: pointer;
 `;
 
 export const ButtonSecundary = styled.button`
