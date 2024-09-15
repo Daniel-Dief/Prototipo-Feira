@@ -11,12 +11,16 @@ export const Welcome = styled.h1`
     color: #FFF;
 `;
 
-export const SmallText = styled.p`
+interface TextProps {
+    color?: string;
+}
+
+export const SmallText = styled.p<TextProps>`
     font-family: Inter, sans-serif;
     font-size: 12px;
     font-weight: 400;
     line-height: 14.52px;
-    color: #71717A;
+    color: ${(props) => props.color || "#71717A"};
 `;
 
 export const Label = styled.label`
@@ -71,4 +75,4 @@ export const WhiteSmallText = styled.p`
     line-height: 14.52px;
     text-align: left;
     color: #F4F4F5;
-`
+`;
