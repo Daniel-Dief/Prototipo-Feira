@@ -44,13 +44,13 @@ export default function SignIn() {
             <Fild 
                 labelText="Email"
                 type="email"
-                requiered={true}
+                required={true}
                 placeholder="Digite seu email"
             />
             <Fild 
                 labelText="Senha"
                 type="password"
-                requiered={true}
+                required={true}
                 placeholder="Digite sua senha"
             />
             <CheckBox 
