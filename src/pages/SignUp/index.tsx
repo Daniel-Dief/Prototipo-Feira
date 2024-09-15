@@ -1,4 +1,4 @@
-import { Logo } from "../../common/styles/Imgs";
+import { Logo, BigImage } from "../../common/styles/Imgs";
 import { ProgressContainer, Progress } from "../../common/styles/Divs";
 import { Title, SmallText, SLink } from "../../common/styles/Text";
 import { Form } from "../../common/styles/Form";
@@ -7,16 +7,20 @@ import { Container } from "../../common/styles/Divs";
 import { Button, ButtonSecundary } from "../../common/styles/Button";
 import CheckBox from "../../components/CheckBox";
 
-import { DivTitle } from "./style";
+import { DivTitle, DivTop, ContainerFinish } from "./style";
 import { useRef, useState } from "react";
 
 export default function SignUp() {
     const [userName,  setUserName] = useState<string | null>(localStorage.getItem("userName"));
+    const [userPassword,  setUserPassword] = useState<string | null>(localStorage.getItem("userPassword"));
 
     const inputName = useRef<HTMLInputElement | null>(null);
     const inputEmail = useRef<HTMLInputElement | null>(null);
     const inputPassword = useRef<HTMLInputElement | null>(null);
 
+    function handleSignIn() {
+        window.location.href = "/SignIn";
+    }
 
     function handleContinue(event: React.FormEvent) {
         if(inputName.current) {
@@ -51,7 +55,70 @@ export default function SignUp() {
         setUserName(null);
     }
 
-    if(userName) {
+    if(!userPassword && !userName) {
+        return (
+            <Container
+                justify_content="space-between"
+                gap="48px"
+            >
+                <Logo src={require("../../common/images/logoBlack.png")}/>
+                <ProgressContainer>
+                    <Progress 
+                        enabled={true}
+                    />
+                    <Progress 
+                        enabled={false}
+                    />
+                </ProgressContainer>
+                <DivTitle>
+                    <Title>
+                        Criar uma conta
+                    </Title>
+                    <SmallText>
+                        Complete seu registro e conecte-se ao conforto
+                    </SmallText>
+                </DivTitle>
+                <Form>
+                    <Fild
+                        labelText="Nome completo"
+                        type="text"
+                        required={true}
+                        placeholder="Digite seu nome completo"
+                        inputRef={inputName}
+                    />
+                    <Fild
+                        labelText="E-mail"
+                        type="email"
+                        required={true}
+                        placeholder="Digite seu endereço de e-mail"
+                        inputRef={inputEmail}
+                    />
+                    <Fild 
+                        labelText="Telefone para contato"
+                        type="phone"
+                        required={false}
+                        placeholder="Digite seu número de telefone"
+                    />
+                    <Button
+                        onClick={handleContinue}
+                    >
+                        Continuar
+                    </Button>
+                </Form>
+                <Container
+                    flex_direction="row"
+                    align_items="center"
+                    justify_content="center"
+                    gap="8px"
+                >
+                    <SmallText>
+                        Já tem uma conta?
+                    </SmallText>
+                    <SLink to="/SignIn">Faça Login</SLink>
+                </Container>
+            </Container>
+        )
+    } else if(!userPassword) {
         return (
             <Container
                 justify_content="space-between"
@@ -118,66 +185,25 @@ export default function SignUp() {
         )
     } else {
         return (
-            <Container
-                justify_content="space-between"
-                gap="48px"
-            >
-                <Logo src={require("../../common/images/logoBlack.png")}/>
-                <ProgressContainer>
-                    <Progress 
-                        enabled={true}
-                    />
-                    <Progress 
-                        enabled={false}
-                    />
-                </ProgressContainer>
-                <DivTitle>
-                    <Title>
-                        Criar uma conta
-                    </Title>
-                    <SmallText>
-                        Complete seu registro e conecte-se ao conforto
-                    </SmallText>
-                </DivTitle>
-                <Form>
-                    <Fild
-                        labelText="Nome completo"
-                        type="text"
-                        required={true}
-                        placeholder="Digite seu nome completo"
-                        inputRef={inputName}
-                    />
-                    <Fild
-                        labelText="E-mail"
-                        type="email"
-                        required={true}
-                        placeholder="Digite seu endereço de e-mail"
-                        inputRef={inputEmail}
-                    />
-                    <Fild 
-                        labelText="Telefone para contato"
-                        type="phone"
-                        required={false}
-                        placeholder="Digite seu número de telefone"
-                    />
-                    <Button
-                        onClick={handleContinue}
-                    >
-                        Continuar
-                    </Button>
-                </Form>
-                <Container
-                    flex_direction="row"
-                    align_items="center"
-                    justify_content="center"
-                    gap="8px"
+            <ContainerFinish>
+                <DivTop>
+                    <Logo src={require("../../common/images/logoBlack.png")}/>
+                    <DivTitle>
+                        <Title>
+                            Cadastro completo!
+                        </Title>
+                        <SmallText>
+                            Parabéns! Seu cadastro está completo. Agora, o conforto Orquestre espera por você.
+                        </SmallText>
+                    </DivTitle>
+                </DivTop>
+                <BigImage src={require("../../common/images/badge-check.png")} alt="Ok"/>
+                <Button
+                    onClick={handleSignIn}
                 >
-                    <SmallText>
-                        Já tem uma conta?
-                    </SmallText>
-                    <SLink to="/SignIn">Faça Login</SLink>
-                </Container>
-            </Container>
+                    Ir para login
+                </Button>
+            </ContainerFinish>
         )
     }
 }
