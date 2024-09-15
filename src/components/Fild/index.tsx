@@ -3,15 +3,17 @@ import { Label } from "../../common/styles/Text";
 import { Container } from "../../common/styles/Divs";
 
 import { TextRequired } from "./style";
+import { RefObject } from "react";
 
 interface FildProps {
     labelText: string;
     type: string;
-    requiered?: boolean;
+    required?: boolean;
     placeholder?: string;
+    inputRef?: RefObject<HTMLInputElement>;
 }
 
-export default function Fild({ labelText, type, requiered, placeholder } : FildProps) {
+export default function Fild({ labelText, type, required, placeholder, inputRef } : FildProps) {
     return (
         <Container
             flex_direction="column"
@@ -20,12 +22,13 @@ export default function Fild({ labelText, type, requiered, placeholder } : FildP
         >
             <Label>
                 {labelText}
-                {requiered && <TextRequired>*</TextRequired>}
+                {required && <TextRequired>*</TextRequired>}
             </Label>
             <Input 
                 type={type}
-                requiered={requiered}
+                required={required}
                 placeholder={placeholder}
+                inputRef={inputRef}
             />
         </Container>
     )

@@ -1,15 +1,17 @@
+import { RefObject } from "react";
 import { Container, SInput } from "./style";
 
 interface InputProps {
     type: string;
-    requiered?: boolean;
+    required?: boolean;
     placeholder?: string;
+    inputRef?: RefObject<HTMLInputElement>;
 }
 
-export default function Input({ type, requiered, placeholder } : InputProps) {
+export default function Input({ type, required, placeholder, inputRef } : InputProps) {
     return (
         <Container>
-            <SInput type={type} required={requiered} placeholder={placeholder} />
+            <SInput ref={inputRef} type={type} required={required} placeholder={placeholder} />
         </Container>
     )
 }
