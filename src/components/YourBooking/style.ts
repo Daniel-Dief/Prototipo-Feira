@@ -13,7 +13,7 @@ export const TextDiv = styled.div`
 `;
 
 export const YourBookingContainer = styled.div`
-    width: 85%;
+    width: 90%;
     height: 300px;
     padding: 16px;
     gap: 12px;
