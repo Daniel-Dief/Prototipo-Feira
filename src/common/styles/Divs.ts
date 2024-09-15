@@ -46,3 +46,10 @@ export const IconBoxDiv = styled.div`
     justify-content: center;
     align-items: center;
 `;
+
+export const Divider = styled.div`
+    width: 85%;
+    height: 2px;
+    border-radius: 2px;
+    background-color: #FAFAFA;
+`;
