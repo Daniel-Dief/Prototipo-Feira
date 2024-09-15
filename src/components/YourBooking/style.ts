@@ -1,13 +1,19 @@
 import styled from "styled-components";
+import { Container } from "../../common/styles/Divs";
+
+export const MasterContainer = styled(Container)`
+    width: 100%;
+`;
 
 export const TextDiv = styled.div`
-    width: 100%;
+    width: 85%;
     display: flex;
     align-items: center;
     justify-content: space-between;
 `;
 
 export const YourBookingContainer = styled.div`
+    width: 85%;
     height: 300px;
     padding: 16px;
     gap: 12px;

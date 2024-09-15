@@ -3,7 +3,7 @@ import { Container } from "../../common/styles/Divs";
 import { Button } from "../../common/styles/Button";
 import { HotelImage } from "../../common/styles/Imgs";
 
-import { YourBookingContainer, TextDiv, InfoDiv, CheckInOutDiv, CheckDateTimeDiv, SlaDiv } from "./style";
+import { MasterContainer, YourBookingContainer, TextDiv, InfoDiv, CheckInOutDiv, CheckDateTimeDiv, SlaDiv } from "./style";
 
 export default function YourBooking() {
     function handlePreCheckin() {
@@ -11,7 +11,7 @@ export default function YourBooking() {
     }
 
     return (
-        <Container
+        <MasterContainer
             gap="16px"
         >
             <TextDiv>
@@ -57,6 +57,6 @@ export default function YourBooking() {
                     </Button>
                 </InfoDiv>
             </YourBookingContainer>
-        </Container>
+        </MasterContainer>
     )
 }
