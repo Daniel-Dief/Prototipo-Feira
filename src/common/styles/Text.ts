@@ -13,6 +13,7 @@ export const Welcome = styled.h1`
 
 interface TextProps {
     color?: string;
+    align?: string;
 }
 
 export const SmallText = styled.p<TextProps>`
@@ -21,6 +22,7 @@ export const SmallText = styled.p<TextProps>`
     font-weight: 400;
     line-height: 14.52px;
     color: ${(props) => props.color || "#71717A"};
+    text-align: ${(props) => props.align || "left"};
 `;
 
 export const Label = styled.label`
