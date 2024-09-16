@@ -4,14 +4,20 @@ import { SmallText } from '../../common/styles/Text';
 import { Container } from './style';
 
 interface ShortInfoProps {
-    icon: string;
+    icon?: string;
     text: string;
 }
 
 export default function ShortInfo({ icon, text }: ShortInfoProps) {
     return (
         <Container>
-            <Icon src={icon} />
+            {
+                icon
+                ?
+                <Icon src={icon} />
+                :
+                <></>
+            }
             <SmallText
                 color="#C2AE8F"
             >
