@@ -5,8 +5,10 @@ import Expenses from "../../components/Expenses";
 import YourBooking from "../../components/YourBooking";
 import Footer from "../../components/Footer";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Services from "../../components/Services";
+
+import FloatContainer from "../../components/FloatContainer/index";
 
 export default function Home() {
     useEffect(() => {
@@ -14,6 +16,12 @@ export default function Home() {
             window.location.href = '/SignIn'
         }
     }, [])
+
+    const [displayModal, setdisplayModal] = useState<"none" | "block">("none");
+
+    const toggleDisplay = () => {
+        setdisplayModal("block");
+    };
 
     return (
         <Container
@@ -23,9 +31,10 @@ export default function Home() {
         >
             <Header kind="home" />
             <Expenses />
-            <YourBooking />
+            <YourBooking execButton={toggleDisplay} />
             <Services />
             <Footer />
+            <FloatContainer display={displayModal}/>
         </Container>
     )
 }

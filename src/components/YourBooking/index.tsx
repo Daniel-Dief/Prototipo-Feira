@@ -2,16 +2,21 @@ import { Title, SLink, Label, SmallText } from "../../common/styles/Text";
 import { Container } from "../../common/styles/Divs";
 import { Button } from "../../common/styles/Button";
 import { HotelImage } from "../../common/styles/Imgs";
+import { useState } from "react";
+
 
 import { MasterContainer, YourBookingContainer, TextDiv, InfoDiv, CheckInOutDiv, CheckDateTimeDiv, SlaDiv } from "./style";
 
 interface YourBookingProps {
     title?: boolean;
+    execButton?: Function;
 }
 
-export default function YourBooking({ title = true } : YourBookingProps) {
+export default function YourBooking({ title = true, execButton } : YourBookingProps) {
     function handlePreCheckin() {
-        window.location.href = "/PreCheckin";
+        if (execButton) {
+           execButton(); 
+        }
     }
 
     return (

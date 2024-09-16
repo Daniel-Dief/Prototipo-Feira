@@ -11,6 +11,7 @@ interface HeaderProps {
 
 export default function Header({ kind, namePage }: HeaderProps) {
     const userName = localStorage.getItem('userName')
+    
 
     function handleBack() {
         window.history.back()
