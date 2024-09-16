@@ -8,7 +8,7 @@ export default function Footer() {
     return (
         <Container>
             {
-                windowPath == "/Home" ? (
+                windowPath === "/Home" ? (
                     <OptionSelected>
                         <BigIcon src={require("../../common/images/house-selected.png")} />
                     </OptionSelected>
@@ -19,7 +19,7 @@ export default function Footer() {
                 )
             }
             {
-                windowPath == "/Calendar" ? (
+                windowPath === "/Calendar" ? (
                     <OptionSelected>
                         <BigIcon src={require("../../common/images/calendar-selected.png")} />
                     </OptionSelected>
@@ -30,7 +30,7 @@ export default function Footer() {
                 )
             }
             {
-                windowPath == "/Chat" ? (
+                windowPath === "/Chat" ? (
                     <OptionSelected>
                         <BigIcon src={require("../../common/images/chat-selected.png")} />
                     </OptionSelected>

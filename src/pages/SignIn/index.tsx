@@ -13,7 +13,11 @@ export default function SignIn() {
 
     function handleSubmit(event: React.FormEvent) {
         event.preventDefault();
-        window.location.href = '/Home';
+        if(localStorage.getItem('userName') === null) {
+            window.location.href = '/SignUp'
+        } else {
+            window.location.href = '/Home';
+        }
     };
 
     function handleButtonClick() {
