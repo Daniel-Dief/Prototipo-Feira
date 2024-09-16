@@ -5,6 +5,7 @@ import VerifyPage from "../VerifyPage";
 import SignIn from '../SignIn';
 import SignUp from '../SignUp';
 import Home from '../Home';
+import Booking from '../Booking';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/SignIn" element={<SignIn />} />
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/Home" element={<Home />} />
+        <Route path="/Booking" element={<Booking />} />
       </Routes>
     </Router>
   )
