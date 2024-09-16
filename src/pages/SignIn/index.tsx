@@ -10,13 +10,23 @@ import { Container, Header, DivTitle, CreateAccount, AuxDiv } from "./style";
 
 export default function SignIn() {
     const formRef = useRef<HTMLFormElement>(null);
+    const inputEmail = useRef<HTMLInputElement>(null);
+    const inputPassword = useRef<HTMLInputElement>(null);
 
     function handleSubmit(event: React.FormEvent) {
         event.preventDefault();
         if(localStorage.getItem('userName') === null) {
             window.location.href = '/SignUp'
         } else {
-            window.location.href = '/Home';
+            if(inputEmail && inputPassword) {
+                const emailCorrect = localStorage.getItem('userEmail') === inputEmail.current?.value;
+                const passWordCorrect = localStorage.getItem('userPassword') === inputPassword.current?.value;
+                if(emailCorrect && passWordCorrect) {
+                    window.location.href = '/Home';
+                } else {
+                    alert('Email ou senha incorretos');
+                }
+            }
         }
     };
 
@@ -45,13 +55,15 @@ export default function SignIn() {
             ref={formRef}
             onSubmit={handleSubmit}
         >
-            <Fild 
+            <Fild
+                inputRef={inputEmail} 
                 labelText="Email"
                 type="email"
                 required={true}
                 placeholder="Digite seu email"
             />
-            <Fild 
+            <Fild
+                inputRef={inputPassword} 
                 labelText="Senha"
                 type="password"
                 required={true}
