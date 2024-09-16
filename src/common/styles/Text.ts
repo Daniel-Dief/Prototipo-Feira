@@ -61,13 +61,17 @@ export const SLink = styled(Link)`
     color: #C2AE8F;
 `;
 
-export const WhiteSpanText = styled.span`
+interface WhiteSpanTextProps {
+    color?: string;
+}
+
+export const WhiteSpanText = styled.span<WhiteSpanTextProps>`
     font-family: Inter;
     font-size: 16px;
     font-weight: 600;
     line-height: 19.36px;
     text-align: left;
-    color: #FFF;
+    color: ${(props) => props.color || "#FFF"};
 `;
 
 export const WhiteSmallText = styled.p`
