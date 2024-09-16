@@ -21,7 +21,7 @@ export default function Home() {
             align_items="center"
             gap="24px"
         >
-            <Header />
+            <Header kind="home" />
             <Expenses />
             <YourBooking />
             <Services />
