@@ -5,7 +5,11 @@ import { HotelImage } from "../../common/styles/Imgs";
 
 import { MasterContainer, YourBookingContainer, TextDiv, InfoDiv, CheckInOutDiv, CheckDateTimeDiv, SlaDiv } from "./style";
 
-export default function YourBooking() {
+interface YourBookingProps {
+    title?: boolean;
+}
+
+export default function YourBooking({ title = true } : YourBookingProps) {
     function handlePreCheckin() {
         window.location.href = "/PreCheckin";
     }
@@ -14,10 +18,16 @@ export default function YourBooking() {
         <MasterContainer
             gap="16px"
         >
-            <TextDiv>
-                <Title>Sua reserva</Title>
-                <SLink to={"/Booking"}>Ver reserva</SLink>
-            </TextDiv>
+            {
+                title
+                ?
+                <TextDiv>
+                    <Title>Sua reserva</Title>
+                    <SLink to={"/Booking"}>Ver reserva</SLink>
+                </TextDiv>
+                :
+                <></>
+            }
             <YourBookingContainer>
                 <HotelImage src={require("../../common/images/rectangle2.png")} alt="Imagem do quarto" />
                 <InfoDiv>
