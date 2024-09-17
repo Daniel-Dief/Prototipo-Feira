@@ -16,6 +16,7 @@ export const NavContainer = styled.div`
     flex-direction: column;
     gap: 12px;
     width: 85%;
+    overflow: hidden;
 `;
 
 export const TitleDiv = styled.div`
@@ -41,5 +42,4 @@ export const ScrollCategories = styled.div`
     justify-content: center;
     width: 120%;
     gap: 12px;
-    overflow-x: hidden;
 `;
