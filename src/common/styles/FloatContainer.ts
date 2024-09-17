@@ -2,10 +2,11 @@ import styled from "styled-components";
 
 interface FloatContainer{
     display: boolean;
+    backgroundColor: string;
 }
 
 export const Container = styled.div<FloatContainer>`
-    background-color: #FFFFFF;
+    background-color: ${(props) => props.backgroundColor ? props.backgroundColor : "#FFFFFF"};
     border-radius: 24px 24px 0px 0px;
     height: ${(props) => props.display ? "85%" : "0"};
     display: flex;
@@ -16,9 +17,8 @@ export const Container = styled.div<FloatContainer>`
     position: fixed;
     bottom: 0;
     width: 100%;
-    border: 2px solid #4E4639;
-
     transition: .5s height ease-in-out;
+    padding-top: 10px;
 `;
 
 export const BodyContainer = styled.div`
@@ -31,6 +31,7 @@ export const BodyContainer = styled.div`
     gap: 48px;
     text-align: center;
     align-items: center;
+
 `;
 
 export const NavContainer = styled.div`
@@ -44,8 +45,11 @@ export const NavContainer = styled.div`
     padding: 16px, 16px, 0px, 16px;
 `;
 
-export const TextNav = styled.a`
+export const TextNav = styled.button`
     font-family: Inter, sans-serif;
+    background-color: none;
+    text-decoration: none;
+    border: none;
     width: 53px;
     height: 19px;
     font-weight: 600;
@@ -53,4 +57,5 @@ export const TextNav = styled.a`
     line-height: 19.36px;
     color: #A1A1AA;
     margin: 0px 7px 0px 7px;
+    cursor: pointer;
 `;

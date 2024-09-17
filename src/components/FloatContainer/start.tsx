@@ -12,14 +12,14 @@ interface FloatContainerProps{
     buttonBack: () => void;
 }
 
-export default function FloatContainer({ display, togleFloatContainer, buttonNext, buttonBack }: FloatContainerProps) {
+export default function StartContainer({ display, togleFloatContainer, buttonNext, buttonBack }: FloatContainerProps) {
 
     function handleCloseModal() {
         togleFloatContainer();
     }
 
     return (
-        <Container backgroundColor="red" display={display}>
+        <Container backgroundColor="blue" display={display}>
             <NavContainer>
                 <TextNav onClick={buttonBack}>
                     Voltar

@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import Services from "../../components/Services";
 
 import FloatContainer from "../../components/FloatContainer/index";
+import StartContainer from "../../components/FloatContainer/start";
 
 export default function Home() {
     useEffect(() => {
@@ -23,6 +24,32 @@ export default function Home() {
         setDisplayFloatContainer(!displayFloatContainer);
     }
 
+    const [modalPage, setModalPage] = useState<number>(1)
+
+    function buttonNext() {
+        if (modalPage < 2) {
+            setModalPage(modalPage + 1)
+        } else {
+            alert("Anta")
+        }  
+    }
+
+    function buttonBack() {
+        if (modalPage > 1) {
+            setModalPage(modalPage - 1)
+        } else {
+            alert("Animal")
+        }  
+    }
+
+    let modalContainer;
+    if (modalPage == 1) {
+        modalContainer = <FloatContainer buttonBack={buttonBack} buttonNext={buttonNext} togleFloatContainer={togleFloatContainer} display={displayFloatContainer}/>
+    } else if (modalPage == 2) {
+        modalContainer = <StartContainer buttonBack={buttonBack} buttonNext={buttonNext} togleFloatContainer={togleFloatContainer} display={displayFloatContainer}/>
+    }
+
+
     return (
         <Container
             flex_direction="column"
@@ -34,7 +61,8 @@ export default function Home() {
             <YourBooking togleFloatContainer={togleFloatContainer} />
             <Services />
             <Footer />
-            <FloatContainer togleFloatContainer={togleFloatContainer} display={displayFloatContainer}/>
+            {modalContainer}
         </Container>
     )
+
 }
