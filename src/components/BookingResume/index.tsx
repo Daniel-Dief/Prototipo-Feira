@@ -5,6 +5,10 @@ import { Icon } from '../../common/styles/Imgs';
 import { HotelImage, DivTop, DivText, DivBottom, InfoDiv } from './style';
 
 export default function BookingResume() {
+    function handleClick() {
+        window.location.href = "/booking";
+    }
+
     return (
         <Container
             gap='12px'
@@ -12,7 +16,7 @@ export default function BookingResume() {
                 backgroundColor: "#FFF",
                 padding: "12px",
                 borderRadius: "12px",
-        }}>
+            }}>
             <DivTop>
                 <HotelImage src={require("../../common/images/rectangle2.png")}/>
                 <DivText>
@@ -48,7 +52,7 @@ export default function BookingResume() {
                         Sab., 20 de jun
                     </WhiteSpanText>
                 </InfoDiv>
-                <Icon src={require("../../common/images/rightArrowBrown.png")}/>
+                <Icon onClick={handleClick} src={require("../../common/images/rightArrowBrown.png")}/>
             </DivBottom>
         </Container>
     )
