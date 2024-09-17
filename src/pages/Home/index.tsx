@@ -17,11 +17,11 @@ export default function Home() {
         }
     }, [])
 
-    const [displayModal, setdisplayModal] = useState<"none" | "block">("none");
+    const [displayFloatContainer, setDisplayFloatContainer] = useState<boolean>(false);
 
-    const toggleDisplay = () => {
-        setdisplayModal("block");
-    };
+    function togleFloatContainer() {
+        setDisplayFloatContainer(!displayFloatContainer);
+    }
 
     return (
         <Container
@@ -31,10 +31,10 @@ export default function Home() {
         >
             <Header kind="home" />
             <Expenses />
-            <YourBooking execButton={toggleDisplay} />
+            <YourBooking togleFloatContainer={togleFloatContainer} />
             <Services />
             <Footer />
-            <FloatContainer display={displayModal}/>
+            <FloatContainer togleFloatContainer={togleFloatContainer} display={displayFloatContainer}/>
         </Container>
     )
 }

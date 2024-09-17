@@ -14,7 +14,7 @@ export default function Booking () {
             gap="24px"
         >
             <Header kind="page" namePage="Reserva"/>
-            <YourBooking title={false} />
+            <YourBooking title={false} togleFloatContainer={() => {}}/>
             <CardContainer>
                 <Title>Características do quarto</Title>
                 <SpecificDiv>
