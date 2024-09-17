@@ -31,17 +31,13 @@ export default function Home() {
     function buttonNext() {
         if (modalPage < 4) {
             setModalPage(modalPage + 1)
-        } else {
-            alert("Anta")
-        }  
+        }
     }
 
     function buttonBack() {
         if (modalPage > 1) {
             setModalPage(modalPage - 1)
-        } else {
-            alert("Animal")
-        }  
+        } 
     }
 
     let modalContainer;

@@ -29,7 +29,7 @@ export default function ThirdStepContainer({ display, togleFloatContainer, butto
                     Fechar
                 </TextNav>
             </NavContainer>
-            <ImageSteps src={require("../../common/images/Step for step 2.png")}/>
+            <ImageSteps src={require("../../common/images/Step for step 3.png")}/>
             <BodyContainer width="375px" height="562px" gap="12px">
                 
                 <DivContent>
