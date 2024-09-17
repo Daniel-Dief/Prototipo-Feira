@@ -1,19 +1,24 @@
 import styled from "styled-components";
 
 interface FloatContainer{
-    display: string;
+    display: boolean;
 }
 
 export const Container = styled.div<FloatContainer>`
     background-color: #FFFFFF;
-    border-radius: 12px 12px 0px 0px;
-    display: ${(props) => props.display === "block" ? "block" : "none"};
+    border-radius: 24px 24px 0px 0px;
+    height: ${(props) => props.display ? "85%" : "0"};
+    display: flex;
     flex-direction: column;
     text-align: center;
     align-items: center;
     z-index: 1;
     position: fixed;
     bottom: 0;
+    width: 100%;
+    border: 2px solid #4E4639;
+
+    transition: .5s height ease-in-out;
 `;
 
 export const BodyContainer = styled.div`
