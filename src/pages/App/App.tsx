@@ -7,6 +7,7 @@ import SignUp from '../SignUp';
 import Home from '../Home';
 import Booking from '../Booking';
 import Restaurant from '../Restaurant';
+import CheckPage from '../CheckPage';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
         <Route path="/Home" element={<Home />} />
         <Route path="/Booking" element={<Booking />} />
         <Route path="/Restaurant" element={<Restaurant />} />
+        <Route path="/CheckPage" element={<CheckPage />} />
       </Routes>
     </Router>
   )
