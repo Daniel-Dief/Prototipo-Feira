@@ -6,19 +6,18 @@ import { Container, BodyContainer, NavContainer, TextNav } from "../../common/st
 import { useState } from "react";
 
 interface FloatContainerProps{
-    display: string;
+    display: boolean;
+    togleFloatContainer: () => void;
 }
 
-export default function FloatContainer({ display }: FloatContainerProps) {
+export default function FloatContainer({ display, togleFloatContainer }: FloatContainerProps) {
     function handlePreCheckin() {
         window.location.href = '/SignUp';
     }
 
     function handleCloseModal() {
-        setdisplayModal("none")
+        togleFloatContainer();
     }
-    
-    const [displayModal, setdisplayModal] = useState<"none" | "block">("none");
 
     return (
         <Container display={display}>
