@@ -11,6 +11,7 @@ export default function ServicesContainer() {
             gap="16px"
         >
             <Container
+                onClick={() => window.location.href = "/VirtualKey"}
                 gap="4px"
             >
                 <ServiceDiv>
@@ -31,6 +32,7 @@ export default function ServicesContainer() {
                 </SmallText>
             </Container>
             <Container
+                onClick={() => window.location.href = "/Restaurant"}
                 gap="4px"
             >
                 <ServiceDiv>

@@ -8,6 +8,7 @@ import Home from '../Home';
 import Booking from '../Booking';
 import Restaurant from '../Restaurant';
 import CheckPage from '../CheckPage';
+import VirtualKey from '../VirtualKey';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/Booking" element={<Booking />} />
         <Route path="/Restaurant" element={<Restaurant />} />
         <Route path="/CheckPage" element={<CheckPage />} />
+        <Route path="/VirtualKey" element={<VirtualKey />} />
       </Routes>
     </Router>
   )
