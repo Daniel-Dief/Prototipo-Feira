@@ -30,7 +30,7 @@ export default function FirstStepContainer({ display, togleFloatContainer, butto
                 </TextNav>
             </NavContainer>
             <ImageSteps src={require("../../common/images/Step for step@2x.png")}/>
-            <BodyContainer gap="12px">
+            <BodyContainer width="375px" height="882px" gap="12px">
             
                 <DivTextPreCheckin width="343px" height="58px">
                     

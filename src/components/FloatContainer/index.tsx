@@ -28,7 +28,7 @@ export default function FloatContainer({ display, togleFloatContainer, buttonNex
                     Fechar
                 </TextNav>
             </NavContainer>
-            <BodyContainer gap="48px">
+            <BodyContainer width="375px" height="562px" gap="48px">
                 <DivTextPreCheckin width="343px" height="158px">
                     <Title>
                         Pré Check-in

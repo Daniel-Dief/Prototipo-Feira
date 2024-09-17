@@ -11,6 +11,7 @@ import Services from "../../components/Services";
 import FloatContainer from "../../components/FloatContainer/index";
 import FirstStepContainer from "../../components/FloatContainer/firstStep";
 import SecondStepContainer from "../../components/FloatContainer/secondStep";
+import ThirdStepContainer from "../../components/FloatContainer/thirdStep";
 
 export default function Home() {
     useEffect(() => {
@@ -28,7 +29,7 @@ export default function Home() {
     const [modalPage, setModalPage] = useState<number>(1)
 
     function buttonNext() {
-        if (modalPage < 3) {
+        if (modalPage < 4) {
             setModalPage(modalPage + 1)
         } else {
             alert("Anta")
@@ -50,6 +51,8 @@ export default function Home() {
         modalContainer = <FirstStepContainer buttonBack={buttonBack} buttonNext={buttonNext} togleFloatContainer={togleFloatContainer} display={displayFloatContainer}/>
     } else if (modalPage == 3) {
         modalContainer = <SecondStepContainer buttonBack={buttonBack} buttonNext={buttonNext} togleFloatContainer={togleFloatContainer} display={displayFloatContainer}/>
+    } else if (modalPage == 4) {
+        modalContainer = <ThirdStepContainer buttonBack={buttonBack} buttonNext={buttonNext} togleFloatContainer={togleFloatContainer} display={displayFloatContainer}/>
     }
 
 

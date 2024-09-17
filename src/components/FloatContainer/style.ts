@@ -23,3 +23,11 @@ export const ImageSteps = styled.img`
     padding: 4px, 0px, 4px, 0px;
     gap: 12px;
 `;
+
+export const DivContent = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 343px;
+    height: 404px;
+    gap: 24px;
+`;

@@ -27,14 +27,16 @@ export const Container = styled.div<FloatContainer>`
 
 interface BodyContainerProps{
     gap: string;
+    width: string;
+    height: string;
 }
 
 export const BodyContainer = styled.div<BodyContainerProps>`
     display: flex;
     flex-direction: column;
     background-color: #FFFFFF;
-    width: 375px;
-    height: 562px;
+    width: ${(props) => props.width};
+    height: ${(props) => props.height};;
     padding: 24px, 16px, 24px, 16px;
     gap: ${(props) => props.gap};
     text-align: center;
