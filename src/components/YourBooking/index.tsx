@@ -9,14 +9,12 @@ import { MasterContainer, YourBookingContainer, TextDiv, InfoDiv, CheckInOutDiv,
 
 interface YourBookingProps {
     title?: boolean;
-    execButton?: Function;
+    togleFloatContainer: () => void;
 }
 
-export default function YourBooking({ title = true, execButton } : YourBookingProps) {
+export default function YourBooking({ title = true, togleFloatContainer } : YourBookingProps) {
     function handlePreCheckin() {
-        if (execButton) {
-           execButton(); 
-        }
+        togleFloatContainer();
     }
 
     return (
