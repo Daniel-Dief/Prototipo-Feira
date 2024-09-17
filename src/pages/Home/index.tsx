@@ -9,7 +9,8 @@ import { useEffect, useState } from "react";
 import Services from "../../components/Services";
 
 import FloatContainer from "../../components/FloatContainer/index";
-import StartContainer from "../../components/FloatContainer/firstStep";
+import FirstStepContainer from "../../components/FloatContainer/firstStep";
+import SecondStepContainer from "../../components/FloatContainer/secondStep";
 
 export default function Home() {
     useEffect(() => {
@@ -27,7 +28,7 @@ export default function Home() {
     const [modalPage, setModalPage] = useState<number>(1)
 
     function buttonNext() {
-        if (modalPage < 2) {
+        if (modalPage < 3) {
             setModalPage(modalPage + 1)
         } else {
             alert("Anta")
@@ -46,7 +47,9 @@ export default function Home() {
     if (modalPage == 1) {
         modalContainer = <FloatContainer buttonBack={buttonBack} buttonNext={buttonNext} togleFloatContainer={togleFloatContainer} display={displayFloatContainer}/>
     } else if (modalPage == 2) {
-        modalContainer = <StartContainer buttonBack={buttonBack} buttonNext={buttonNext} togleFloatContainer={togleFloatContainer} display={displayFloatContainer}/>
+        modalContainer = <FirstStepContainer buttonBack={buttonBack} buttonNext={buttonNext} togleFloatContainer={togleFloatContainer} display={displayFloatContainer}/>
+    } else if (modalPage == 3) {
+        modalContainer = <SecondStepContainer buttonBack={buttonBack} buttonNext={buttonNext} togleFloatContainer={togleFloatContainer} display={displayFloatContainer}/>
     }
 
 

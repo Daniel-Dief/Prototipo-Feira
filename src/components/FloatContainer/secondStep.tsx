@@ -13,7 +13,7 @@ interface FloatContainerProps{
     buttonBack: () => void;
 }
 
-export default function FirstStepContainer({ display, togleFloatContainer, buttonNext, buttonBack }: FloatContainerProps) {
+export default function SecondStepContainer({ display, togleFloatContainer, buttonNext, buttonBack }: FloatContainerProps) {
 
     function handleCloseModal() {
         togleFloatContainer();
@@ -29,56 +29,56 @@ export default function FirstStepContainer({ display, togleFloatContainer, butto
                     Fechar
                 </TextNav>
             </NavContainer>
-            <ImageSteps src={require("../../common/images/Step for step@2x.png")}/>
+            <ImageSteps src={require("../../common/images/Step for step 2.png")}/>
             <BodyContainer gap="12px">
             
                 <DivTextPreCheckin width="343px" height="58px">
                     
                     <Title>
-                        Seus dados
+                        Dados residenciais
                     </Title>
                     <SmallText color="#71717A">
-                        Verifique seus dados e preencha os campos necessários para continuar com check-in.                    
+                        Preencha os campos necessários para continuar com check-in.                    
                     </SmallText>
                 </DivTextPreCheckin>
                 
                 <Form
         >
             <Fild
-                labelText="Nome Completo"
+                labelText="País"
                 type="text"
                 required={true}
-                placeholder="Digite seu nome"
+                placeholder="Digite seu país"
             />
             <Fild
-                labelText="Sexo"
-                type="text"
-                required={true}
-                placeholder="Digite seu sexo"
-            />
-            <Fild
-                labelText="Data de nascimento"
-                type="date"
-                required={true}
-                placeholder="Selecione sua data de nascimento"
-            />
-            <Fild
-                labelText="CPF"
-                type="Number"
-                required={true}
-                placeholder="000.000.000-X"
-            />
-            <Fild
-                labelText="E-mail"
-                type="email"
-                required={true}
-                placeholder="Digite seu email"
-            />
-            <Fild
-                labelText="Telefone"
+                labelText="CEP"
                 type="number"
                 required={true}
-                placeholder="Digite seu telefone"
+                placeholder="Digite seu CEP"
+            />
+            <Fild
+                labelText="Estado"
+                type="text"
+                required={true}
+                placeholder="Digite seu estado"
+            />
+            <Fild
+                labelText="Rua"
+                type="text"
+                required={true}
+                placeholder="Digite seu endereço residencial"
+            />
+            <Fild
+                labelText="Número"
+                type="number"
+                required={true}
+                placeholder="Digite seu número residencial"
+            />
+            <Fild
+                labelText="Complemento"
+                type="text"
+                required={false}
+                placeholder="Ex: Apartamento 10, Portão Marrom"
             />
             <Button
                     property="disable"
