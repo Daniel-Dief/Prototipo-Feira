@@ -16,6 +16,7 @@ export default function BookingResume() {
                 backgroundColor: "#FFF",
                 padding: "12px",
                 borderRadius: "12px",
+                width: "90%",
             }}>
             <DivTop>
                 <HotelImage src={require("../../common/images/rectangle2.png")}/>
