@@ -7,7 +7,7 @@ export const Container = styled.div`
     padding: 12px;
     gap: 10px;
     border-radius: 12px;
-    background-color: #FFF;
+    background-color: #EFF0F3;
 
     font-family: Inter, sans-serif;
     font-size: 16px;
@@ -24,7 +24,7 @@ export const SInput = styled.input`
     border: none;
     background-color: transparent;
     outline: none;
-    color: #71717A;
+    color: #09090B;
     width: 100%;
     height: 100%;
 `;

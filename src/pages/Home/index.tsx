@@ -9,7 +9,7 @@ import { useEffect, useState } from "react";
 import Services from "../../components/Services";
 
 import FloatContainer from "../../components/FloatContainer/index";
-import StartContainer from "../../components/FloatContainer/start";
+import StartContainer from "../../components/FloatContainer/firstStep";
 
 export default function Home() {
     useEffect(() => {

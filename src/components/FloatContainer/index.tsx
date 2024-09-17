@@ -19,7 +19,7 @@ export default function FloatContainer({ display, togleFloatContainer, buttonNex
     }
 
     return (
-        <Container backgroundColor="red" display={display}>
+        <Container paddingBotton="0px" gap="20px" display={display}>
             <NavContainer>
                 <TextNav onClick={buttonBack}>
                     Voltar
@@ -28,8 +28,8 @@ export default function FloatContainer({ display, togleFloatContainer, buttonNex
                     Fechar
                 </TextNav>
             </NavContainer>
-            <BodyContainer>
-                <DivTextPreCheckin>
+            <BodyContainer gap="48px">
+                <DivTextPreCheckin width="343px" height="158px">
                     <Title>
                         Pré Check-in
                     </Title>

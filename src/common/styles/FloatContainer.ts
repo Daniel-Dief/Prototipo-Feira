@@ -2,13 +2,14 @@ import styled from "styled-components";
 
 interface FloatContainer{
     display: boolean;
-    backgroundColor: string;
+    gap: string;
+    paddingBotton: string;
 }
 
 export const Container = styled.div<FloatContainer>`
-    background-color: ${(props) => props.backgroundColor ? props.backgroundColor : "#FFFFFF"};
+    background-color: #FFFFFF;
     border-radius: 24px 24px 0px 0px;
-    height: ${(props) => props.display ? "85%" : "0"};
+    height: ${(props) => props.display ? "85%" : "0 "};
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -18,20 +19,26 @@ export const Container = styled.div<FloatContainer>`
     bottom: 0;
     width: 100%;
     transition: .5s height ease-in-out;
-    padding-top: 10px;
+    padding: 10px 0px ${(props) => props.paddingBotton} 0px;
+    gap: ${(props) => props.gap};
+    overflow-y: scroll;
+
 `;
 
-export const BodyContainer = styled.div`
+interface BodyContainerProps{
+    gap: string;
+}
+
+export const BodyContainer = styled.div<BodyContainerProps>`
     display: flex;
     flex-direction: column;
     background-color: #FFFFFF;
     width: 375px;
     height: 562px;
     padding: 24px, 16px, 24px, 16px;
-    gap: 48px;
+    gap: ${(props) => props.gap};
     text-align: center;
     align-items: center;
-
 `;
 
 export const NavContainer = styled.div`
@@ -45,7 +52,7 @@ export const NavContainer = styled.div`
     padding: 16px, 16px, 0px, 16px;
 `;
 
-export const TextNav = styled.button`
+export const TextNav = styled.a`
     font-family: Inter, sans-serif;
     background-color: none;
     text-decoration: none;
