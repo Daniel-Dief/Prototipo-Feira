@@ -98,3 +98,5 @@ export const BigButton = styled.div`
     align-items: center;
     margin: auto;
 `; 
+
+
