@@ -10,7 +10,6 @@ export const DivFooterTickets = styled.div<FooterTicketProps>`
     padding: 24px, 16px, 24px, 16px;
     gap: 12px;
     background-color: #FFFFFF;
-    box-shadow: 0px -4px 9px 0px;
     display: ${(props) => props.display};
     text-align: center;
     align-items: center;

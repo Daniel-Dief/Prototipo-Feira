@@ -6,6 +6,10 @@ import ShortInfo from "../../components/ShortInfo";
 import DishContainer from "../../components/DishContainer";
 import FloatContainer from "../../components/FloatContainerShop";
 import FooterTicket from "../../components/FooterTicket";
+import OpenTicket from "../../components/openTicket";
+import OpenTicket2 from "../../components/openTicket/openTicket2";
+import FiveStepContainer from "../../components/FloatContainer/fiveStep";
+import PreCheckin from "../PrecheckinFinish";
 
 import { useState } from "react";
 
@@ -21,16 +25,34 @@ export default function Restaurant() {
 
     const [modalPage, setModalPage] = useState<number>(1)
 
-    let teste
+    function openTicket() {
+        setModalPage(2)
+    }
 
-    function buttonAdd () {
-        teste = <FooterTicket display="flex"/>
+    function openTicket2() {
+        setModalPage(3)
+    }
+
+    function openGuests() {
+        setModalPage(7)
+    }
+
+    function redirect() {
+        window.location.href = "/CheckPage"
     }
 
     let modalContainer;
     if (modalPage == 1) {
-        modalContainer = <FloatContainer execFooter={buttonAdd} togleFloatContainer={togleFloatContainer} display={displayFloatContainer}/>
-    } 
+        modalContainer = <FloatContainer togleFloatContainer={togleFloatContainer} display={displayFloatContainer}/>
+    } else if (modalPage == 2) {
+        modalContainer = <OpenTicket display={true} togleFloatContainer={togleFloatContainer} NextTicket={openTicket2} />
+    } else if (modalPage == 3) {
+        modalContainer = <OpenTicket2 display={true} togleFloatContainer={togleFloatContainer} NextTicket={openGuests} />
+    }  else if (modalPage == 7) {
+        modalContainer = <FiveStepContainer buttonBack={openTicket2} buttonNext={redirect} togleFloatContainer={togleFloatContainer} display={true}/>
+    } else if (modalPage == 8) {
+        modalContainer = <PreCheckin />
+    }
 
     return (
         <Container
@@ -115,8 +137,7 @@ export default function Restaurant() {
                 />
             </Menu>
             {modalContainer}
-            {teste}
-            <FooterTicket display="flex"/>
+            <FooterTicket display="flex" openTicket={openTicket} value="R$ 32,00 / 1 item" text="Ver sacola" />
         </Container>
     )
 }

@@ -10,10 +10,9 @@ import TimerIconImg from "../../common/images/timer.png"
 interface FloatContainerProps{
     display: boolean;
     togleFloatContainer: () => void;
-    execFooter: () => void;
 }
 
-export default function FloatContainer({ display, togleFloatContainer, execFooter }: FloatContainerProps) {
+export default function FloatContainer({ display, togleFloatContainer }: FloatContainerProps) {
 
     localStorage.setItem("valueTicket", "0")
 
@@ -22,7 +21,6 @@ export default function FloatContainer({ display, togleFloatContainer, execFoote
     }
 
     function CloseTicket() {
-        execFooter();
         togleFloatContainer();
     }
 
