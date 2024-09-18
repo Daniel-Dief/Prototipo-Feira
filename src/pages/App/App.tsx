@@ -9,6 +9,7 @@ import Booking from '../Booking';
 import Restaurant from '../Restaurant';
 import CheckPage from '../CheckPage';
 import VirtualKey from '../VirtualKey';
+import Calendar from '../Calendar';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/Restaurant" element={<Restaurant />} />
         <Route path="/CheckPage" element={<CheckPage />} />
         <Route path="/VirtualKey" element={<VirtualKey />} />
+        <Route path="/Calendar" element={<Calendar />} />
       </Routes>
     </Router>
   )
