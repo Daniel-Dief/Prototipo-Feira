@@ -9,8 +9,7 @@ interface FloatContainer{
 export const Container = styled.div<FloatContainer>`
     background-color: #FFFFFF;
     border-radius: 24px 24px 0px 0px;
-    height: ${(props) => props.display ? "85%" : "0 "};
-    display: flex;
+    height: ${(props) => props.display ? "85%" : "0"};
     flex-direction: column;
     text-align: center;
     align-items: center;
@@ -22,7 +21,7 @@ export const Container = styled.div<FloatContainer>`
     padding: 10px 0px ${(props) => props.paddingBotton} 0px;
     gap: ${(props) => props.gap};
     overflow-y: scroll;
-
+    visibility: ${(props) => props.display ? "visible" : "hidden"};
 `;
 
 interface BodyContainerProps{
