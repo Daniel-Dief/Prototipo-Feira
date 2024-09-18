@@ -16,6 +16,11 @@ import Third05StepContainer from "../../components/FloatContainer/third,5Steps";
 import FourStepContainer from "../../components/FloatContainer/fourStep";
 import FiveStepContainer from "../../components/FloatContainer/fiveStep";
 
+import PreCheckOut from "../.././components/PreCheckout/index";
+import PreCheckOut2 from "../.././components/PreCheckout/paymentValues";
+import PreCheckOut3 from "../.././components/PreCheckout/paymentFinish";
+import PreCheckOut4 from "../.././components/PreCheckout/finishCheckout";
+
 export default function Home() {
     useEffect(() => {
         if(localStorage.getItem('userName') === null) {
@@ -34,7 +39,7 @@ export default function Home() {
     const [modalPage, setModalPage] = useState<number>(localcheckin ? 1000 : 1)
 
     function buttonNext() {
-        if (modalPage < 6) {
+        if (modalPage < 6 || modalPage >= 1000) {
             setModalPage(modalPage + 1)
         }
     }
@@ -68,6 +73,14 @@ export default function Home() {
         modalContainer = <FourStepContainer buttonBack={buttonBack} buttonNext={buttonNext} togleFloatContainer={togleFloatContainer} display={displayFloatContainer}/>
     } else if (modalPage == 6) {
         modalContainer = <FiveStepContainer buttonBack={buttonBack} buttonNext={buttonNext} togleFloatContainer={togleFloatContainer} display={displayFloatContainer}/>
+    } else if (modalPage == 1000) {
+        modalContainer = <PreCheckOut buttonBack={togleFloatContainer} buttonNext={buttonNext} togleFloatContainer={togleFloatContainer} display={displayFloatContainer}/>
+    } else if (modalPage == 1001) {
+        modalContainer = <PreCheckOut2 buttonBack={buttonBack} buttonNext={buttonNext} togleFloatContainer={togleFloatContainer} display={displayFloatContainer}/>
+    } else if (modalPage == 1002) {
+        modalContainer = <PreCheckOut3 buttonBack={buttonBack} buttonNext={buttonNext} togleFloatContainer={togleFloatContainer} display={displayFloatContainer}/>
+    } else if (modalPage == 1003) {
+        modalContainer = <PreCheckOut4 />
     }
 
 
