@@ -9,6 +9,8 @@ export const Container = styled.div`
     border-radius: 12px;
     background-color: #EFF0F3;
 
+    border: 1px solid #000;
+
     font-family: Inter, sans-serif;
     font-size: 16px;
     font-weight: 400;
