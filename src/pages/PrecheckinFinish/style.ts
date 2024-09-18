@@ -7,6 +7,7 @@ export const DivTitle = styled.div`
     justify-content: center;
     width: 85%;
     gap: 4px;
+    padding-top: 60px;
 `;
 
 export const DivTop = styled.div`
@@ -26,4 +27,11 @@ export const ContainerFinish = styled.div`
     gap: 24px;
     width: 100%;
     height: 95%;
+`;
+
+export const AlignIcon = styled.div`
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin-top: 100px;
 `;

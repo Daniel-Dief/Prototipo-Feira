@@ -13,9 +13,10 @@ interface Props {
     servicePath?: string;
     serviceName?: string;
     serviceHour?: string;
+    backButton: () => void;
 }
 
-export default function CalendarFloatContainer({ kind, display, toggleDisplay, servicePath, serviceName,serviceHour  }: Props) {
+export default function CalendarFloatContainer({ kind, display, toggleDisplay, backButton, servicePath, serviceName,serviceHour  }: Props) {
     const listaDeHorarios = [
         "09:00 AM",
         "10:00 AM",
@@ -41,7 +42,7 @@ export default function CalendarFloatContainer({ kind, display, toggleDisplay, s
                 }}
             paddingBotton="90px" gap="15px" display={display}>
                 <NavContainer>
-                    <TextNav onClick={toggleDisplay}>Voltar</TextNav>
+                    <TextNav onClick={backButton}>Voltar</TextNav>
                 </NavContainer>
                 <BodyContainer
                     width="100%"
