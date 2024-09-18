@@ -7,6 +7,7 @@ import { DivTitle, DivTop, ContainerFinish, AlignIcon } from "./style";
 
 export default function PreCheckin() {
     function handleSignIn() {
+        localStorage.setItem('checkin', "true");
         window.location.href = "/CheckPage";
     }
 

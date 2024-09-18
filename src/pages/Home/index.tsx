@@ -15,30 +15,6 @@ import ThirdStepContainer from "../../components/FloatContainer/thirdStep";
 import Third05StepContainer from "../../components/FloatContainer/third,5Steps";
 import FourStepContainer from "../../components/FloatContainer/fourStep";
 import FiveStepContainer from "../../components/FloatContainer/fiveStep";
-import Component from "../Calendar/component";
-import PreCheckin from "../PrecheckinFinish";
-
-function Signature() {
-    const [modalPage, setModalPage] = useState<number>(1);
-
-    function openTicket2() {
-        setModalPage(2);
-    }
-
-    let modalContainer;
-
-    if (modalPage === 1) {
-        modalContainer = <Component link={openTicket2} />;
-    } else if (modalPage === 2) {
-        modalContainer = <PreCheckin />;
-    }
-
-    return (
-        <Container gap="12px">
-            {modalContainer}
-        </Container>
-    );
-}
 
 export default function Home() {
     useEffect(() => {
@@ -53,10 +29,12 @@ export default function Home() {
         setDisplayFloatContainer(!displayFloatContainer);
     }
 
-    const [modalPage, setModalPage] = useState<number>(1)
+    const localcheckin = localStorage.getItem("checkin") === "true" ? true : false;
+
+    const [modalPage, setModalPage] = useState<number>(localcheckin ? 1000 : 1)
 
     function buttonNext() {
-        if (modalPage < 8) {
+        if (modalPage < 6) {
             setModalPage(modalPage + 1)
         }
     }
@@ -90,11 +68,7 @@ export default function Home() {
         modalContainer = <FourStepContainer buttonBack={buttonBack} buttonNext={buttonNext} togleFloatContainer={togleFloatContainer} display={displayFloatContainer}/>
     } else if (modalPage == 6) {
         modalContainer = <FiveStepContainer buttonBack={buttonBack} buttonNext={buttonNext} togleFloatContainer={togleFloatContainer} display={displayFloatContainer}/>
-    } else if (modalPage == 7) {
-        modalContainer = <Component link={buttonNext} />; 
-    } else if (modalPage == 8) {
-        modalContainer = <PreCheckin />; 
-    }    
+    }
 
 
     return (

@@ -13,6 +13,8 @@ interface YourBookingProps {
 }
 
 export default function YourBooking({ title = true, togleFloatContainer } : YourBookingProps) {
+    const checkin = localStorage.getItem('checkin') === "true" ? true : false;
+
     function handlePreCheckin() {
         togleFloatContainer();
     }
@@ -66,7 +68,13 @@ export default function YourBooking({ title = true, togleFloatContainer } : Your
                     <Button
                         onClick={handlePreCheckin}
                     >
-                        Pré Check-in
+                        {
+                            checkin
+                            ?
+                            "Check-out"
+                            :
+                            "Pré Check-in"
+                        }
                     </Button>
                 </InfoDiv>
             </YourBookingContainer>
