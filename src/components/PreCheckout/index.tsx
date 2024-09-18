@@ -1,6 +1,6 @@
 import { Title, SmallText } from "../../common/styles/Text";
 import { Button } from "../../common/styles/Button";
-import { DivTextPreCheckin, ImagePreCheckin } from "./style";
+import { DivTextPreCheckin, ImagePreCheckin } from "../../components/FloatContainer/style";
 import { Container, BodyContainer, NavContainer, TextNav } from "../../common/styles/FloatContainer";
 
 import { useState } from "react";
@@ -13,6 +13,7 @@ interface FloatContainerProps{
 }
 
 export default function FloatContainer({ display, togleFloatContainer, buttonNext, buttonBack }: FloatContainerProps) {
+
 
     function handleCloseModal() {
         togleFloatContainer();
@@ -34,7 +35,7 @@ export default function FloatContainer({ display, togleFloatContainer, buttonNex
                         Pré Check-out
                     </Title>
                     <SmallText color="#71717A">
-                        A seguir, orientaremos você a fazer o check-out da sua estadia em alguns passos simples.
+                    A seguir, orientaremos você a fazer o check-out da sua estadia em alguns passos simples.
                     </SmallText>
                 </DivTextPreCheckin>
                 

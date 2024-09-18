@@ -2,7 +2,7 @@ import ScrollDayCalendarSlaOqueeisso from '../../components/ScrollDayCalendarSla
 import Header from "../../components/Header";
 import { Title, SpanText } from "../../common/styles/Text";
 import { Icon } from "../../common/styles/Imgs";
-import Footer from "../../components/Footer";
+import Footer from "../../components/Footer/index";
 import { Container } from "../../common/styles/Divs";
 import { useState } from "react";
 import { WhiteDiv } from "../VirtualKey/style";

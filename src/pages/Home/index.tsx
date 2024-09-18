@@ -3,7 +3,7 @@ import { Container } from "../../common/styles/Divs";
 import Header from "../../components/Header";
 import Expenses from "../../components/Expenses";
 import YourBooking from "../../components/YourBooking";
-import Footer from "../../components/Footer";
+import Footer from "../../components/Footer/index";
 
 import { useEffect, useState } from "react";
 import Services from "../../components/Services";
