@@ -11,10 +11,9 @@ interface FloatContainerProps{
     togleFloatContainer: () => void;
     buttonNext: () => void;
     buttonBack: () => void;
-    buttonNext05: () => void;
 }
 
-export default function ThirdStepContainer({ display, togleFloatContainer, buttonNext, buttonBack, buttonNext05 }: FloatContainerProps) {
+export default function FourStepContainer({ display, togleFloatContainer, buttonNext, buttonBack }: FloatContainerProps) {
 
     function handleCloseModal() {
         togleFloatContainer();
@@ -37,7 +36,7 @@ export default function ThirdStepContainer({ display, togleFloatContainer, butto
                     <DivTextPreCheckin width="343px" height="58px">
                         
                         <Title>
-                            Hóspedes (1/4)
+                            Hóspedes (4/4)
                         </Title>
                         <SmallText color="#71717A">
                             Clique para registrar os demais hóspedes de sua reserva.                    
@@ -45,11 +44,15 @@ export default function ThirdStepContainer({ display, togleFloatContainer, butto
                     </DivTextPreCheckin>
                     
                     <GuestRegistred display="flex" name="José Eduardo" document="123.456.789-0" />
+                    <GuestRegistred display="block" name="Leticia Pirez" document="123.456.789-0" />
+                    <GuestRegistred display="block" name="Arthur Silva" document="123.456.789-0" />
+                    <GuestRegistred display="block" name="Paola Soares" document="123.456.789-0" />
 
-                    <GuestRegister buttonNext05={buttonNext05} />
+
                 </DivContent>
 
                 <Button
+                        property="disable"
                         onClick={buttonNext}
                     >
                     Continuar

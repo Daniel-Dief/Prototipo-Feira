@@ -20,7 +20,7 @@ export default function GuestRegistred({ name, document, display } :GuestRegistr
                 </DocumentGuest>
             </TextsGuest>
             <SettingsIcon display={display} src={require("../../../common/images/crown.png")} />
-            <SettingsIcon display="block" src={require("../../../common/images/settings-hospedes.png")} />
+            <SettingsIcon display="flex" src={require("../../../common/images/settings-hospedes.png")} />
         </DivGuest>
     )
 }

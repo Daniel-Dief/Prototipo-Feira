@@ -10,9 +10,10 @@ interface FloatContainerProps{
     display: boolean;
     togleFloatContainer: () => void;
     buttonBack05: () => void;
+    buttonNext05: () => void;
 }
 
-export default function Third05StepContainer({ display, togleFloatContainer, buttonBack05 }: FloatContainerProps) {
+export default function Third05StepContainer({ display, togleFloatContainer, buttonBack05, buttonNext05 }: FloatContainerProps) {
 
     function handleCloseModal() {
         togleFloatContainer();
@@ -80,7 +81,7 @@ export default function Third05StepContainer({ display, togleFloatContainer, but
             />
             <Button
                     property="disable"
-                    onClick={buttonBack05}
+                    onClick={buttonNext05}
                 >
                 Salvar
             </Button>

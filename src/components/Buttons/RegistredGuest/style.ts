@@ -31,7 +31,9 @@ interface SettingsIconProps{
 export const SettingsIcon = styled.img<SettingsIconProps>`
     width: 20px;
     height: 20px;
-    display: ${(props) => props.display};
+    float: right;
+    display: flex;
+    z-index: ${(props) => props.display === "block" ? -1 : 1};
 `;
 
 export const NameGuest = styled.h2`
