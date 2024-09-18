@@ -22,6 +22,14 @@ export default function FiveStepContainer({ display, togleFloatContainer, button
         togleFloatContainer();
     }
 
+    function handleClickRestaurant() {
+        window.location.href = "/restaurant"
+    }
+
+    function handleClickCalendar() {
+        window.location.href = "/Calendar"
+    }
+
     return (
         <Container paddingBotton="90px" gap="15px" display={display}>
             <NavContainer>
@@ -47,10 +55,10 @@ export default function FiveStepContainer({ display, togleFloatContainer, button
                     </DivTextPreCheckin>
                     
                     <Div2x2>
-                        <ButtonServices title="Restaurante" icon={utensilsIcon} width="165.5px" height="48px" />
-                        <ButtonServices title="Limpeza" icon={cleanerIcon} width="165.5px" height="48px" />
-                        <ButtonServices title="Lavanderia" icon={washingMachine} width="165.5px" height="48px" />
-                        <ButtonServices title="BabySitting" icon={babyIcon} width="165.5px" height="48px" />
+                        <ButtonServices title="Restaurante" icon={utensilsIcon} width="165.5px" height="48px" handleClick={handleClickRestaurant} />
+                        <ButtonServices title="Limpeza" icon={cleanerIcon} width="165.5px" height="48px" handleClick={handleClickCalendar} />
+                        <ButtonServices title="Lavanderia" icon={washingMachine} width="165.5px" height="48px" handleClick={handleClickCalendar} />
+                        <ButtonServices title="BabySitting" icon={babyIcon} width="165.5px" height="48px" handleClick={handleClickCalendar} />
                     </Div2x2>
 
                 </DivContent>

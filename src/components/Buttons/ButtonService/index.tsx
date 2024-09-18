@@ -5,12 +5,13 @@ interface ButtonServicesProps{
     icon: string;
     width: string;
     height: string;
+    handleClick: () => void;
 }
 
-export default function ButtonServices({ title, icon, width, height } : ButtonServicesProps ){
+export default function ButtonServices({ title, icon, width, height, handleClick } : ButtonServicesProps ){
     
     return (
-        <DivServices width={width} height={height}>
+        <DivServices onClick={handleClick} width={width} height={height}>
             <ImageServices src={icon} />
             <TextServices>
                 {title}
