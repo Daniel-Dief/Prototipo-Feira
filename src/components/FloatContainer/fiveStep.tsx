@@ -18,6 +18,10 @@ interface FloatContainerProps{
 
 export default function FiveStepContainer({ display, togleFloatContainer, buttonNext, buttonBack }: FloatContainerProps) {
 
+    function handlePrecheckin() {
+        window.location.href = "/CheckPage"
+    }
+
     function handleCloseModal() {
         togleFloatContainer();
     }
@@ -64,7 +68,7 @@ export default function FiveStepContainer({ display, togleFloatContainer, button
                 </DivContent>
 
                 <Button
-                        onClick={buttonNext}
+                        onClick={handlePrecheckin}
                     >
                     Pular
                 </Button>
