@@ -1,4 +1,4 @@
-import { DivAlign, DivValue, DivTexts, DivButton, Text, Number, TextButton, ImageBody } from "./style";
+import { DivAlign, DivValue, DivTexts, DivButton, Text, Number, TextButton, ImageBody, BigButton, TextBigButton } from "./style";
 import { Container, BodyContainer, NavContainer, TextNav } from "../../common/styles/FloatContainer";
 import { useState } from "react";
 
@@ -32,13 +32,13 @@ export default function FloatContainer({ display, togleFloatContainer, buttonBac
             </BodyContainer>
 
             <DivValue>
-                <DivButton onClick={buttonNext}>
-                    <TextButton>
+                <BigButton onClick={buttonNext}>
+                    <TextBigButton>
                         Realizar pagamento
-                    </TextButton>
-                </DivButton>
+                    </TextBigButton>
+                </BigButton>
             </DivValue>
 
         </Container>
     )
-}
+}   

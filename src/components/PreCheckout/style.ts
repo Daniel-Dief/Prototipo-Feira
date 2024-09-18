@@ -7,6 +7,10 @@ export const DivValue = styled.div`
     gap: 12px;
     border: 2px 0px 0px 0px;
     opacity: 0px;
+    position: fixed;
+    bottom: 0;
+    border-top: 2px solid #F9F7F3;
+    background-color: #FFFFFF;
 `;
 
 export const DivAlign = styled.div`
@@ -14,7 +18,8 @@ export const DivAlign = styled.div`
     height: 48px;
     gap: 12px;
     opacity: 0px;
-
+    display: flex;
+    align-items: center;
 `;
 
 export const DivTexts = styled.div`
@@ -56,7 +61,7 @@ export const DivButton = styled.div`
     height: 48px;
     padding: 8px 16px 8px 16px;
     gap: 0px;
-    border-radius: 12px 0px 0px 0px;
+    border-radius: 12px;
     opacity: 0px;
     background-color: #C2AE8F;
     display: flex;
@@ -75,6 +80,7 @@ export const TextButton = styled.h1`
     line-height: 16.94px;
     text-align: left;
     color: #FFFFFF;
+    margin: auto;
 `;
 
 export const ImageBody = styled.img`
@@ -84,19 +90,33 @@ export const ImageBody = styled.img`
     gap: 24px;
     border-radius: 12px 0px 0px 0px;
     opacity: 0px;
+    padding-bottom: 100px;
+`;
+
+export const TextBigButton = styled.a`
+    width: 135px;
+    height: 17px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16.94px;
+    text-align: left;
+    color: #FFFFFF;
+    margin: auto;
 `;
 
 export const BigButton = styled.div`
     width: 343px;
     height: 48px;
     padding: 8px 16px 8px 16px;
+    display: flex;
     gap: 0px;
-    border-radius: 12px 0px 0px 0px;
-    opacity: 0px;
+    border-radius: 12px;
     background-color: #C2AE8F;
     text-align: center;
     align-items: center;
-    margin: auto;
 `; 
 
 

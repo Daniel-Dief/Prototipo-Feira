@@ -16,7 +16,7 @@ export default function FloatContainer({ display, togleFloatContainer, buttonBac
     }
 
     return (
-        <Container paddingBotton="0px" gap="24px" display={display}>            
+        <Container paddingBotton="0px" gap="2px" display={display}>            
             
             <NavContainer>
                 <TextNav onClick={buttonBack}>
@@ -27,7 +27,7 @@ export default function FloatContainer({ display, togleFloatContainer, buttonBac
                 </TextNav>
             </NavContainer>
 
-            <BodyContainer width="375px" height="340px" gap="24px">
+            <BodyContainer width="375px" height="340px" gap="2px">
                 <ImageBody src={require("../../common/images/BodyPayment.png")} />
             </BodyContainer>
 
