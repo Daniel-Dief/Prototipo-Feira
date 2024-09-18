@@ -11,9 +11,10 @@ interface FloatContainerProps{
     togleFloatContainer: () => void;
     buttonNext: () => void;
     buttonBack: () => void;
+    buttonNext05: () => void;
 }
 
-export default function ThirdStepContainer({ display, togleFloatContainer, buttonNext, buttonBack }: FloatContainerProps) {
+export default function ThirdStepContainer({ display, togleFloatContainer, buttonNext, buttonBack, buttonNext05 }: FloatContainerProps) {
 
     function handleCloseModal() {
         togleFloatContainer();
@@ -45,7 +46,7 @@ export default function ThirdStepContainer({ display, togleFloatContainer, butto
                     
                     <GuestRegistred display="flex" name="José Eduardo" document="123.456.789-0" />
 
-                    <GuestRegister />
+                    <GuestRegister buttonNext05={buttonNext05} />
                 </DivContent>
 
                 <Button

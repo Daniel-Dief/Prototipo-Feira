@@ -1,9 +1,13 @@
 import { DivRegisterGuest, TextRegisterGuest, ImageRegisterGuest } from "./style";
 
-export default function GuestRegister({ }){
+interface GuestRegisterProps{
+    buttonNext05: () => void;
+}
+ 
+export default function GuestRegister({ buttonNext05 }: GuestRegisterProps){
     
     return (
-        <DivRegisterGuest>
+        <DivRegisterGuest onClick={buttonNext05}>
             <ImageRegisterGuest src={require("../../../common/images/register-guest.png")} />
             <TextRegisterGuest>
                 Cadastrar Hóspede

@@ -12,6 +12,7 @@ import FloatContainer from "../../components/FloatContainer/index";
 import FirstStepContainer from "../../components/FloatContainer/firstStep";
 import SecondStepContainer from "../../components/FloatContainer/secondStep";
 import ThirdStepContainer from "../../components/FloatContainer/thirdStep";
+import Third05StepContainer from "../../components/FloatContainer/third,5Steps";
 
 export default function Home() {
     useEffect(() => {
@@ -37,7 +38,15 @@ export default function Home() {
     function buttonBack() {
         if (modalPage > 1) {
             setModalPage(modalPage - 1)
-        } 
+        }   
+    }
+
+    function buttonNext05() {
+        setModalPage(modalPage + 0.5)
+    }
+
+    function buttonBack05() {
+        setModalPage(modalPage - 0.5)
     }
 
     let modalContainer;
@@ -48,7 +57,9 @@ export default function Home() {
     } else if (modalPage == 3) {
         modalContainer = <SecondStepContainer buttonBack={buttonBack} buttonNext={buttonNext} togleFloatContainer={togleFloatContainer} display={displayFloatContainer}/>
     } else if (modalPage == 4) {
-        modalContainer = <ThirdStepContainer buttonBack={buttonBack} buttonNext={buttonNext} togleFloatContainer={togleFloatContainer} display={displayFloatContainer}/>
+        modalContainer = <ThirdStepContainer buttonNext05={buttonNext05} buttonBack={buttonBack} buttonNext={buttonNext} togleFloatContainer={togleFloatContainer} display={displayFloatContainer}/>
+    } else if (modalPage == 4.5) {
+        modalContainer = <Third05StepContainer buttonBack05={buttonBack05} togleFloatContainer={togleFloatContainer} display={displayFloatContainer}/>
     }
 
 
