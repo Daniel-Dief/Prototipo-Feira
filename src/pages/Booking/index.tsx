@@ -43,7 +43,7 @@ export default function Booking () {
             <CardContainer>
                 <TextDiv>
                     <Title>Amenidades principais</Title>
-                    <SLink to="/Services">ver tudo</SLink>
+                    <SLink to="/Home">ver tudo</SLink>
                 </TextDiv>
                 <SpecificDiv>
                     <ShortInfo 

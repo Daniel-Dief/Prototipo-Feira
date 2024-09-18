@@ -51,7 +51,9 @@ export default function CardAgend() {
                     </WhiteSpanText>
                 </AgendDiv>
             </div>
-            <div>
+            <div
+                onClick={() => window.location.href = "/Calendar"}
+            >
                 <BigIcon src={require("../../common/images/rightArrowBrown.png")}/>
             </div>
         </Container>
