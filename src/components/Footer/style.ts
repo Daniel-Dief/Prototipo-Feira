@@ -13,6 +13,9 @@ export const Container = styled.div`
     justify-content: space-evenly;
 
     filter: drop-shadow(10px 10px 10px #949494);
+
+    position: fixed;
+    bottom: 0;
 `;
 
 export const Option = styled.div`
