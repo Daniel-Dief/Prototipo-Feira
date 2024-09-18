@@ -4,7 +4,15 @@ import { Icon } from "../../common/styles/Imgs";
 import { CampHour, LabelHour, EventDiv } from "./style";
 import { start } from "repl";
 
-export default function ScrollDayCalendarSlaOqueeisso() {
+interface Props {
+    hhandleClick: (
+        servicePath: string,
+        serviceName: string,
+        serviceHour: string
+    ) => void;
+}
+
+export default function ScrollDayCalendarSlaOqueeisso({ hhandleClick }: Props) {
     return (
         <Container
             gap="48px"
@@ -44,7 +52,9 @@ export default function ScrollDayCalendarSlaOqueeisso() {
                     <SmallText>12:00</SmallText>
                     <SmallText>pm</SmallText>
                 </LabelHour>
-                <EventDiv>
+                <EventDiv
+                    onClick={() => hhandleClick(require("../../common/images/utensils-crossed-selected.png"), "Restaurante", "12:00")}
+                >
                     <Divider />
                     <div
                         style={{
@@ -110,7 +120,9 @@ export default function ScrollDayCalendarSlaOqueeisso() {
                     <SmallText>03:00</SmallText>
                     <SmallText>pm</SmallText>
                 </LabelHour>
-                <EventDiv>
+                <EventDiv
+                    onClick={() => hhandleClick(require("../../common/images/baby.png"), "Baby Sitter", "12:00")}
+                >
                     <Divider />
                     <div
                         style={{
@@ -185,7 +197,9 @@ export default function ScrollDayCalendarSlaOqueeisso() {
                     <SmallText>07:00</SmallText>
                     <SmallText>pm</SmallText>
                 </LabelHour>
-                <EventDiv>
+                <EventDiv
+                    onClick={() => hhandleClick(require("../../common/images/washing-machine.png"), "Lavanderia", "12:00")}
+                >
                     <Divider />
                     <div
                         style={{

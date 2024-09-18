@@ -4,10 +4,33 @@ import { Title, SpanText } from "../../common/styles/Text";
 import { Icon } from "../../common/styles/Imgs";
 import Footer from "../../components/Footer";
 import { Container } from "../../common/styles/Divs";
-
+import { useState } from "react";
 import { WhiteDiv } from "../VirtualKey/style";
+import CalendarFloatContainer from '../../components/FloatContainer/calendarFloatContainer';
 
 export default function Calendar() {
+    const [display, setDisplay] = useState<boolean>(false);
+    const [ddisplay, ssetDisplay] = useState<boolean>(false);
+
+    const [servicePath, setServicePath] = useState<string>("");
+    const [serviceName, setServiceName] = useState<string>("");
+    const [serviceHour, setServiceHour] = useState<string>("");
+
+    function handleClicksosumi() {
+        ssetDisplay(!ddisplay);
+    }
+
+    function hhandleClick(path : string, name : string, hour : string) {
+        setServicePath(path)
+        setServiceName(name)
+        setServiceHour(hour)
+        ssetDisplay(!ddisplay);
+    }
+
+    function handleClick() {
+        setDisplay(!display);
+    }
+
     return (
         <Container
             gap="20px"
@@ -31,6 +54,7 @@ export default function Calendar() {
                         justifyContent: "center",
                         gap: "10px"
                     }}
+                    onClick={handleClick}
                 >
                     Adicionar serviço +
                     <Icon src={require("../../common/images/calendar-selected.png")}/>
@@ -98,7 +122,22 @@ export default function Calendar() {
                     <SpanText>19</SpanText>
                 </WhiteDiv>
             </Container>
-            <ScrollDayCalendarSlaOqueeisso />
+            <ScrollDayCalendarSlaOqueeisso 
+                hhandleClick={(path, name, hour) => hhandleClick(path, name, hour)}
+            />
+            <CalendarFloatContainer 
+                kind="new"
+                display={display}
+                toggleDisplay={handleClick}
+            />
+            <CalendarFloatContainer 
+                kind="another"
+                display={ddisplay}
+                toggleDisplay={handleClicksosumi}
+                serviceName={serviceName}
+                servicePath={servicePath}
+                serviceHour={serviceHour}
+            />
             <Footer />
         </Container>
     )

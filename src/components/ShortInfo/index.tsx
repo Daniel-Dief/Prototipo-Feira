@@ -6,9 +6,10 @@ import { Container } from './style';
 interface ShortInfoProps {
     icon?: string;
     text: string;
+    color?: string;
 }
 
-export default function ShortInfo({ icon, text }: ShortInfoProps) {
+export default function ShortInfo({ icon, text, color }: ShortInfoProps) {
     return (
         <Container>
             {
@@ -19,7 +20,7 @@ export default function ShortInfo({ icon, text }: ShortInfoProps) {
                 <></>
             }
             <SmallText
-                color="#C2AE8F"
+                color={color ?? "#C2AE8F"}
             >
                 {text}
             </SmallText>
