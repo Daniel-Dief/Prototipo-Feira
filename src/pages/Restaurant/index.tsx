@@ -36,6 +36,10 @@ export default function Restaurant() {
     function openGuests() {
         setModalPage(7)
     }
+    
+    function congratulations() {
+        setModalPage(8)
+    }
 
     function redirect() {
         window.location.href = "/CheckPage"
@@ -49,7 +53,7 @@ export default function Restaurant() {
     } else if (modalPage == 3) {
         modalContainer = <OpenTicket2 display={true} togleFloatContainer={togleFloatContainer} NextTicket={openGuests} />
     }  else if (modalPage == 7) {
-        modalContainer = <FiveStepContainer buttonBack={openTicket2} buttonNext={redirect} togleFloatContainer={togleFloatContainer} display={true}/>
+        modalContainer = <FiveStepContainer buttonBack={openTicket2} buttonNext={congratulations} togleFloatContainer={togleFloatContainer} display={true}/>
     } else if (modalPage == 8) {
         modalContainer = <PreCheckin />
     }
