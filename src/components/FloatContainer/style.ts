@@ -31,3 +31,12 @@ export const DivContent = styled.div`
     height: 404px;
     gap: 24px;
 `;
+
+export const Div2x2 = styled.div`
+    width: 343px;
+    height: 108px;
+    gap: 12px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+`;

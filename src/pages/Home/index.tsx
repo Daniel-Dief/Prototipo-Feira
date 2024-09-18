@@ -14,6 +14,7 @@ import SecondStepContainer from "../../components/FloatContainer/secondStep";
 import ThirdStepContainer from "../../components/FloatContainer/thirdStep";
 import Third05StepContainer from "../../components/FloatContainer/third,5Steps";
 import FourStepContainer from "../../components/FloatContainer/fourStep";
+import FiveStepContainer from "../../components/FloatContainer/fiveStep";
 
 export default function Home() {
     useEffect(() => {
@@ -31,7 +32,7 @@ export default function Home() {
     const [modalPage, setModalPage] = useState<number>(1)
 
     function buttonNext() {
-        if (modalPage < 5) {
+        if (modalPage < 6) {
             setModalPage(modalPage + 1)
         }
     }
@@ -63,6 +64,8 @@ export default function Home() {
         modalContainer = <Third05StepContainer buttonNext05={buttonNext05} buttonBack05={buttonBack05} togleFloatContainer={togleFloatContainer} display={displayFloatContainer}/>
     } else if (modalPage == 5) {
         modalContainer = <FourStepContainer buttonBack={buttonBack} buttonNext={buttonNext} togleFloatContainer={togleFloatContainer} display={displayFloatContainer}/>
+    } else if (modalPage == 6) {
+        modalContainer = <FiveStepContainer buttonBack={buttonBack} buttonNext={buttonNext} togleFloatContainer={togleFloatContainer} display={displayFloatContainer}/>
     }
 
 
