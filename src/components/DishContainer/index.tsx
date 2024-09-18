@@ -7,12 +7,14 @@ interface DishContainerProps {
     backgroundImage: string;
     value: string;
     time: string;
+    link: () => void;
 }
 
-export default function DishContainer({ backgroundImage, value, time }: DishContainerProps) {
+export default function DishContainer({ backgroundImage, value, time, link }: DishContainerProps) {
     return (
         <SContainer
             backgroundImage={backgroundImage}
+            onClick={link}
         >
             <TopDiv>
                 <WhiteSpanText>

@@ -8,6 +8,8 @@ interface FloatContainer{
 
 export const Container = styled.div<FloatContainer>`
     background-color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
     border-radius: 24px 24px 0px 0px;
     height: ${(props) => props.display ? "85%" : "0"};
     flex-direction: column;
@@ -18,7 +20,7 @@ export const Container = styled.div<FloatContainer>`
     bottom: 0;
     width: 100%;
     transition: .5s height ease-in-out;
-    padding: 10px 0px ${(props) => props.paddingBotton} 0px;
+    padding: 0px 0px ${(props) => props.paddingBotton} 0px;
     gap: ${(props) => props.gap};
     overflow-y: scroll;
     visibility: ${(props) => props.display ? "visible" : "hidden"};
@@ -44,6 +46,7 @@ export const BodyContainer = styled.div<BodyContainerProps>`
 
 export const NavContainer = styled.div`
     border-radius: 12px 12px 0px 0px;
+    margin-top: 10px;
     display: flex;
     align-items: center;
     background-color: #FFFFFF;

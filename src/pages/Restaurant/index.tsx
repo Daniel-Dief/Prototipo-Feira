@@ -4,10 +4,34 @@ import { Title, SmallText } from "../../common/styles/Text";
 import Input from "../../components/Input/Input";
 import ShortInfo from "../../components/ShortInfo";
 import DishContainer from "../../components/DishContainer";
+import FloatContainer from "../../components/FloatContainerShop";
+import FooterTicket from "../../components/FooterTicket";
+
+import { useState } from "react";
 
 import { Menu, Filters, ScrollCategories, TitleDiv, NavContainer } from "./style";
 
 export default function Restaurant() {
+
+    const [displayFloatContainer, setDisplayFloatContainer] = useState<boolean>(false);
+
+    function togleFloatContainer() {
+        setDisplayFloatContainer(!displayFloatContainer);
+    }
+
+    const [modalPage, setModalPage] = useState<number>(1)
+
+    let teste
+
+    function buttonAdd () {
+        teste = <FooterTicket display="flex"/>
+    }
+
+    let modalContainer;
+    if (modalPage == 1) {
+        modalContainer = <FloatContainer execFooter={buttonAdd} togleFloatContainer={togleFloatContainer} display={displayFloatContainer}/>
+    } 
+
     return (
         <Container
             gap="12px"
@@ -57,33 +81,42 @@ export default function Restaurant() {
                     backgroundImage={require("../../common/images/rectangle3.png")}
                     time="40min"
                     value="50,00"
+                    link={togleFloatContainer}
                 />
                 <DishContainer 
                     backgroundImage={require("../../common/images/rectangle4.png")}
                     time="40min"
                     value="50,00"
+                    link={togleFloatContainer}
                 />
                 <DishContainer 
                     backgroundImage={require("../../common/images/rectangle5.png")}
                     time="40min"
                     value="50,00"
+                    link={togleFloatContainer}
                 />
                 <DishContainer 
                     backgroundImage={require("../../common/images/rectangle6.png")}
                     time="40min"
                     value="50,00"
+                    link={togleFloatContainer}
                 />
                 <DishContainer 
                     backgroundImage={require("../../common/images/rectangle7.png")}
                     time="40min"
                     value="50,00"
+                    link={togleFloatContainer}
                 />
                 <DishContainer 
                     backgroundImage={require("../../common/images/rectangle8.png")}
                     time="40min"
                     value="50,00"
+                    link={togleFloatContainer}
                 />
             </Menu>
+            {modalContainer}
+            {teste}
+            <FooterTicket display="flex"/>
         </Container>
     )
 }
