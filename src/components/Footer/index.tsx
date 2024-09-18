@@ -44,7 +44,7 @@ export default function Footer() {
                     </OptionSelected>
                 ) : (
                     <Option
-                        onClick={() => handleClick("Chat")}
+                        onClick={() => handleClick("Home")}
                     >
                         <BigIcon src={require("../../common/images/chat.png")} />
                     </Option>

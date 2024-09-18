@@ -23,6 +23,7 @@ export default function ServicesContainer() {
             </Container>
             <Container
                 gap="4px"
+                onClick={() => window.location.href = "/Calendar"}
             >
                 <ServiceDiv>
                     <BigIcon src={require("../../common/images/paintbrush.png")} />
@@ -44,6 +45,7 @@ export default function ServicesContainer() {
             </Container>
             <Container
                 gap="4px"
+                onClick={() => window.location.href = "/Calendar"}
             >
                 <ServiceDiv>
                     <BigIcon src={require("../../common/images/layout-dashboard.png")} />
