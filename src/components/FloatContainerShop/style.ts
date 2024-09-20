@@ -127,8 +127,15 @@ export const TextButtonAdd = styled.p<TextButtonAddProps>`
     margin-right: 15px;
 `;
 
-export const ImageProduct = styled.div`
-    background-image: url(${RetangleImage});
+interface ImageProductProps {
+    url: () => string;
+}
+
+export const ImageProduct = styled.div<ImageProductProps>`
+    background-image: url(${(props) => props.url});
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
     padding: 15px;
     border-radius: 12px;
     width: 100%;

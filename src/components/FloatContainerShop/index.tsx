@@ -5,16 +5,17 @@ import Fild from "../Fild";
 import { Container, BodyContainer } from "../../common/styles/FloatContainer";
 import { useState } from "react";
 import ArrowIconProduct from "../../common/images/arrow-product.png";
-import TimerIconImg from "../../common/images/timer.png"
 
 interface FloatContainerProps{
     display: boolean;
     togleFloatContainer: () => void;
+    id: string | undefined;
 }
 
-export default function FloatContainer({ display, togleFloatContainer }: FloatContainerProps) {
+export default function FloatContainer({ display, togleFloatContainer, id }: FloatContainerProps) {
+    const jsonProducts = localStorage.getItem('json-products')    
 
-    localStorage.setItem("valueTicket", "0")
+    let [value, setvalue] = useState<number | undefined>(undefined)
 
     function handleCloseModal() {
         togleFloatContainer();
@@ -24,28 +25,53 @@ export default function FloatContainer({ display, togleFloatContainer }: FloatCo
         togleFloatContainer();
     }
 
-    const [amountProduct, setamountProduct] = useState<number>(1)
+    function getImage() {
+        if (jsonProducts) {
+            if (id) {
+                const parsedProducts = JSON.parse(jsonProducts);
+                for (let i = 0; i < parsedProducts.length; i++) {
+                    const product = parsedProducts[i];
+                    if (product['id'] == id) {
+                        setvalue(product['value'])
+                        value = product['value']
+                        return product['image']
+                    }
+                }
+            }
+        }
+        return null;
+    }
+
+    let [amountProduct, setamountProduct] = useState<number>(0)
+
+    let [valueTicket, setvalueTicket] = useState<number | undefined>(0)
 
     function PlusAmount () {
-        setamountProduct(amountProduct + 1)
-        setvalueTicket(32.00 * (amountProduct + 1))
+        if (value) {
+            setamountProduct(amountProduct + 1)
+            amountProduct = amountProduct + 1
+            setvalueTicket(value * amountProduct)
+            valueTicket = value * amountProduct
+        }      
     }
 
     function MinusAmount () {
-        if (amountProduct > 1) {
-            setamountProduct(amountProduct - 1)
-            setvalueTicket(32.00 * (amountProduct - 1))
+        if (amountProduct > 0) {
+            if (value) {
+                setamountProduct(amountProduct - 1)
+                amountProduct = amountProduct - 1
+                setvalueTicket(value * amountProduct)
+                valueTicket = value * amountProduct
+            }     
         } else {
             handleCloseModal()
         }
     }
 
-    const [valueTicket, setvalueTicket] = useState<number>(32.00)
-
     return (
         <Container paddingBotton="0px" gap="24px" display={display}>
             
-            <ImageProduct>
+            <ImageProduct url={getImage}>
                 <ArrowIcon onClick={togleFloatContainer} src={ArrowIconProduct} />
             </ImageProduct>
             
@@ -56,7 +82,7 @@ export default function FloatContainer({ display, togleFloatContainer }: FloatCo
                         Lorem ipsum
                     </NameProduct>
                     <ValueProduct>
-                        R$ 32,00
+                        R${value}.00
                     </ValueProduct>
                     <DescriptionProduct>
                         Lorem ipsum dolor sit amet. Ea reprehenderit dolor et aliquam aspernatur ad dicta nisi. Nam fuga quia sed eveniet labore ea error voluptatem aut dolores distinctio in tempore placeat ut nesciunt culpa rem minus sint. Et rerum exercitationem et porro nulla qui quibusdam iure ut soluta adipisci vel deleniti quasi et inventore sint et corrupti pariatur.

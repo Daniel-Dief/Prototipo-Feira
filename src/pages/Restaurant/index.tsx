@@ -11,6 +11,15 @@ import OpenTicket2 from "../../components/openTicket/openTicket2";
 import FiveStepContainer from "../../components/FloatContainer/fiveStep";
 import PreCheckin from "../PrecheckinFinish";
 
+import rectangle3 from '../../common/images/rectangle3.png';
+import rectangle4 from '../../common/images/rectangle4.png';
+import rectangle5 from '../../common/images/rectangle5.png';
+import rectangle6 from '../../common/images/rectangle6.png';
+import rectangle7 from '../../common/images/rectangle7.png';
+import rectangle8 from '../../common/images/rectangle8.png';
+import rectangle9 from '../../common/images/rectangle9.png';
+import rectangle10 from '../../common/images/rectangle10.png';
+
 import { useState } from "react";
 
 import { Menu, Filters, ScrollCategories, TitleDiv, NavContainer } from "./style";
@@ -19,8 +28,14 @@ export default function Restaurant() {
 
     const [displayFloatContainer, setDisplayFloatContainer] = useState<boolean>(false);
 
-    function togleFloatContainer() {
-        setDisplayFloatContainer(!displayFloatContainer);
+    const [id, setid] = useState<string | undefined>(undefined)
+
+    function togleFloatContainer(product ?: string) {
+        if (product) {
+            setDisplayFloatContainer(!displayFloatContainer);
+            setid(product)
+            return id
+        }
     }
 
     const [modalPage, setModalPage] = useState<number>(1)
@@ -47,16 +62,77 @@ export default function Restaurant() {
 
     let modalContainer;
     if (modalPage == 1) {
-        modalContainer = <FloatContainer togleFloatContainer={togleFloatContainer} display={displayFloatContainer}/>
+        modalContainer = <FloatContainer id={id} togleFloatContainer={togleFloatContainer} display={displayFloatContainer}/>
     } else if (modalPage == 2) {
-        modalContainer = <OpenTicket display={true} togleFloatContainer={togleFloatContainer} NextTicket={openTicket2} />
+        modalContainer = <OpenTicket display={displayFloatContainer} togleFloatContainer={togleFloatContainer} NextTicket={openTicket2} />
     } else if (modalPage == 3) {
-        modalContainer = <OpenTicket2 display={true} togleFloatContainer={togleFloatContainer} NextTicket={openGuests} />
+        modalContainer = <OpenTicket2 display={displayFloatContainer} togleFloatContainer={togleFloatContainer} NextTicket={openGuests} />
     }  else if (modalPage == 7) {
         modalContainer = <FiveStepContainer buttonBack={openTicket2} buttonNext={congratulations} togleFloatContainer={togleFloatContainer} display={true}/>
     } else if (modalPage == 8) {
         modalContainer = <PreCheckin />
     }
+
+    const jsonProducts = [
+        {
+            'id' : '1',
+            'product' : 'Lorem ipsum',
+            'image' : rectangle3,
+            'time' : '45min',
+            'value' : 32.00
+        },
+        {
+            'id' : '2',
+            'product' : 'Lorem ipsum',
+            'image' : rectangle4,
+            'time' : '30min',
+            'value' : 16.00
+        },
+        {
+            'id' : '3',
+            'product' : 'Lorem ipsum',
+            'image' : rectangle5,
+            'time' : '60min',
+            'value' : 56.00
+        },
+        {
+            'id' : '4',
+            'product' : 'Lorem ipsum',
+            'image' : rectangle6,
+            'time' : '60min',
+            'value' : 34.00
+        },
+        {
+            'id' : '5',
+            'product' : 'Lorem ipsum',
+            'image' : rectangle7,
+            'time' : '50min',
+            'value' : 40.00
+        },
+        {
+            'id' : '6',
+            'product' : 'Lorem ipsum',
+            'image' : rectangle8,
+            'time' : '10min',
+            'value' : 25.00
+        },
+        {
+            'id' : '7',
+            'product' : 'Lorem ipsum',
+            'image' : rectangle9,
+            'time' : '5min',
+            'value' : 6.00
+        },
+        {
+            'id' : '8',
+            'product' : 'Lorem ipsum',
+            'image' : rectangle10,
+            'time' : '30min',
+            'value' : 16.00
+        }
+    ]
+
+    localStorage.setItem('json-products', JSON.stringify(jsonProducts))
 
     return (
         <Container
@@ -103,42 +179,17 @@ export default function Restaurant() {
                 </ScrollCategories>
             </NavContainer>
             <Menu>
-                <DishContainer 
-                    backgroundImage={require("../../common/images/rectangle3.png")}
-                    time="40min"
-                    value="50,00"
-                    link={togleFloatContainer}
-                />
-                <DishContainer 
-                    backgroundImage={require("../../common/images/rectangle4.png")}
-                    time="40min"
-                    value="50,00"
-                    link={togleFloatContainer}
-                />
-                <DishContainer 
-                    backgroundImage={require("../../common/images/rectangle5.png")}
-                    time="40min"
-                    value="50,00"
-                    link={togleFloatContainer}
-                />
-                <DishContainer 
-                    backgroundImage={require("../../common/images/rectangle6.png")}
-                    time="40min"
-                    value="50,00"
-                    link={togleFloatContainer}
-                />
-                <DishContainer 
-                    backgroundImage={require("../../common/images/rectangle7.png")}
-                    time="40min"
-                    value="50,00"
-                    link={togleFloatContainer}
-                />
-                <DishContainer 
-                    backgroundImage={require("../../common/images/rectangle8.png")}
-                    time="40min"
-                    value="50,00"
-                    link={togleFloatContainer}
-                />
+                {
+                    jsonProducts.map(product => (
+                        <DishContainer 
+                            backgroundImage={product.image}
+                            time={product.time}
+                            value={product.value}
+                            link={() => togleFloatContainer(product.id)}
+                            
+                        />
+                    ))
+                }
             </Menu>
             {modalContainer}
             <FooterTicket display="flex" openTicket={openTicket} value="R$ 32,00 / 1 item" text="Ver sacola" />

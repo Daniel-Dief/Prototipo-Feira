@@ -5,9 +5,9 @@ import { SContainer, TopDiv } from "./style";
 
 interface DishContainerProps {
     backgroundImage: string;
-    value: string;
+    value: number;
     time: string;
-    link: () => void;
+    link: () => string | undefined;
 }
 
 export default function DishContainer({ backgroundImage, value, time, link }: DishContainerProps) {
