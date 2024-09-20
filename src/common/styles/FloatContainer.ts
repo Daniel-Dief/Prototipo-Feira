@@ -4,6 +4,7 @@ interface FloatContainer{
     display: boolean;
     gap: string;
     paddingBotton: string;
+    margin?: string;
 }
 
 export const Container = styled.div<FloatContainer>`
@@ -19,6 +20,7 @@ export const Container = styled.div<FloatContainer>`
     position: fixed;
     bottom: 0;
     width: 100%;
+    margin-bottom: ${(props) => props.margin};
     transition: .5s height ease-in-out;
     padding: 0px 0px ${(props) => props.paddingBotton} 0px;
     gap: ${(props) => props.gap};

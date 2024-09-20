@@ -128,7 +128,7 @@ export const TextButtonAdd = styled.p<TextButtonAddProps>`
 `;
 
 interface ImageProductProps {
-    url: () => string;
+    url: () => string | null;
 }
 
 export const ImageProduct = styled.div<ImageProductProps>`

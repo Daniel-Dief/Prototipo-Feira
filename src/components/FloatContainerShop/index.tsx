@@ -5,6 +5,7 @@ import Fild from "../Fild";
 import { Container, BodyContainer } from "../../common/styles/FloatContainer";
 import { useState } from "react";
 import ArrowIconProduct from "../../common/images/arrow-product.png";
+import { VerifyProducts, ResetProducts, UpdateProducts } from "../../pages/Restaurant/functionsShop";
 
 interface FloatContainerProps{
     display: boolean;
@@ -13,30 +14,32 @@ interface FloatContainerProps{
 }
 
 export default function FloatContainer({ display, togleFloatContainer, id }: FloatContainerProps) {
-    const jsonProducts = localStorage.getItem('json-products')    
+    const jsonProducts = VerifyProducts() as Array<{ id: string; image: string; time: string; value: number }>
 
     let [value, setvalue] = useState<number | undefined>(undefined)
-
-    function handleCloseModal() {
-        togleFloatContainer();
+    let [imageUrl, setImageUrl] = useState<string | null>(null);
+    
+    function CloseTicket() {
+        setamountProduct(0)
+        setvalueTicket(0)
+        setvalue(0)
+        togleFloatContainer()
     }
 
-    function CloseTicket() {
-        togleFloatContainer();
+    function ConfirmTicket() {
+        setamountProduct(0)
+        setvalueTicket(0)
+        setvalue(0)
+        togleFloatContainer()
     }
 
     function getImage() {
-        if (jsonProducts) {
-            if (id) {
-                const parsedProducts = JSON.parse(jsonProducts);
-                for (let i = 0; i < parsedProducts.length; i++) {
-                    const product = parsedProducts[i];
-                    if (product['id'] == id) {
-                        setvalue(product['value'])
-                        value = product['value']
-                        return product['image']
-                    }
-                }
+        if (jsonProducts && id) {
+            const product = jsonProducts.find(product => product.id === id);
+            if (product) {
+                setvalue(product.value); 
+                setImageUrl(product.image); 
+                return product.image; 
             }
         }
         return null;
@@ -61,10 +64,9 @@ export default function FloatContainer({ display, togleFloatContainer, id }: Flo
                 setamountProduct(amountProduct - 1)
                 amountProduct = amountProduct - 1
                 setvalueTicket(value * amountProduct)
-                valueTicket = value * amountProduct
             }     
         } else {
-            handleCloseModal()
+            CloseTicket()
         }
     }
 
@@ -72,7 +74,7 @@ export default function FloatContainer({ display, togleFloatContainer, id }: Flo
         <Container paddingBotton="0px" gap="24px" display={display}>
             
             <ImageProduct url={getImage}>
-                <ArrowIcon onClick={togleFloatContainer} src={ArrowIconProduct} />
+                <ArrowIcon onClick={CloseTicket} src={ArrowIconProduct} />
             </ImageProduct>
             
             
