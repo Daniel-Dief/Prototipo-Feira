@@ -119,7 +119,7 @@ export default function Restaurant() {
                         <DishContainer 
                             backgroundImage={product.image}
                             time={product.time}
-                            value={product.value}
+                            value={`${product.value}.00`}
                             link={() => togleFloatContainer(product.id)}
                             
                         />
@@ -128,7 +128,7 @@ export default function Restaurant() {
             </Menu>
             {modalContainer}
             <Container margin="100px"/>
-            <FooterTicket display="flex" openTicket={openTicket} value="R$ 32,00 / 1 item" text="Ver sacola" />
+            <FooterTicket display="flex" openTicket={openTicket} text="Ver sacola" />
         </Container>
     )
 }

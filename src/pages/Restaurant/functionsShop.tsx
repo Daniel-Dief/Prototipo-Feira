@@ -101,11 +101,11 @@ export function ResetProducts () {
 }
 
 interface UpdateProductsProps{
-    id: string;
-    amount: number;
+    id: string | undefined;
+    amountProduct: number;
 }
 
-export function UpdateProducts ({ id, amount }: UpdateProductsProps) {
+export function UpdateProducts ({ id, amountProduct }: UpdateProductsProps) {
     const aux = localStorage.getItem('products')
 
     if (aux) {
@@ -114,7 +114,7 @@ export function UpdateProducts ({ id, amount }: UpdateProductsProps) {
         for (let i = 0; i < objJson.length; i++) {
             const product = objJson[i];
             if (id == product['id']) {
-                product['amount'] = amount
+                product['amount'] = amountProduct
             }
         }
         localStorage.setItem('products', JSON.stringify(objJson))

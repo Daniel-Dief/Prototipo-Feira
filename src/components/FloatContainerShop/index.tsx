@@ -27,6 +27,7 @@ export default function FloatContainer({ display, togleFloatContainer, id }: Flo
     }
 
     function ConfirmTicket() {
+        UpdateProducts({id, amountProduct})
         setamountProduct(0)
         setvalueTicket(0)
         setvalue(0)
@@ -108,7 +109,7 @@ export default function FloatContainer({ display, togleFloatContainer, id }: Flo
                         <TextAmountProduct>{amountProduct}</TextAmountProduct>
                         <IconAmountProduct onClick={PlusAmount} src={require("../../common/images/plus.png")} />
                     </DivAmountProduct>
-                    <ButtonAdd onClick={CloseTicket}>
+                    <ButtonAdd onClick={ConfirmTicket}>
                         <TextButtonAdd width="65px">Adicionar</TextButtonAdd>
                         <TextButtonAdd width="62px">R${valueTicket}.00</TextButtonAdd>
                     </ButtonAdd>

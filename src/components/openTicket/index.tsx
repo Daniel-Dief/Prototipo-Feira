@@ -53,7 +53,7 @@ export default function OpenTicket({ display, togleFloatContainer, NextTicket }:
                 <ImageBody src={require("../../common/images/BodyTickets.png")} />
             </BodyContainer>
             
-            <FooterTicket display="flex" openTicket={NextTicket} value="R$ 44,00 / 3 item" text="Continuar" />
+            <FooterTicket display="flex" openTicket={NextTicket} text="Continuar" />
 
         </Container>
     )

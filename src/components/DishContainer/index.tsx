@@ -5,7 +5,7 @@ import { SContainer, TopDiv } from "./style";
 
 interface DishContainerProps {
     backgroundImage: string;
-    value: number;
+    value: string;
     time: string;
     link: () => string | undefined;
 }
