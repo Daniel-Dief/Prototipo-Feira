@@ -1,8 +1,10 @@
 import { Container, BodyContainer } from "../../common/styles/FloatContainer";
 import { useState } from "react";
-import TimerIconImg from "../../common/images/timer.png"
-import { NavTicket, Title, DownArrow, CleanTicket, ImageBody } from "./style"
+import { NavTicket, Title, DownArrow, CleanTicket, AddItensDiv, AddItensIcon, AddItensText, TitleShop } from "./style"
 import FooterTicket from "../FooterTicket";
+import addIcon from "../../common/images/plus.png";
+import ShopComponent from "../DivShopProducts";
+import { VerifyProducts, ResetProducts, UpdateProducts } from "../../pages/Restaurant/functionsShop";
 
 interface FloatContainerProps{
     display: boolean;
@@ -11,6 +13,8 @@ interface FloatContainerProps{
 }
 
 export default function OpenTicket({ display, togleFloatContainer, NextTicket }: FloatContainerProps) {
+
+    const jsonProducts = VerifyProducts()
 
     localStorage.setItem("valueTicket", "0")
 
@@ -22,21 +26,6 @@ export default function OpenTicket({ display, togleFloatContainer, NextTicket }:
         togleFloatContainer();
     }
 
-    const [amountProduct, setamountProduct] = useState<number>(1)
-
-    function PlusAmount () {
-        setamountProduct(amountProduct + 1)
-        setvalueTicket(32.00 * (amountProduct + 1))
-    }
-
-    function MinusAmount () {
-        if (amountProduct > 1) {
-            setamountProduct(amountProduct - 1)
-            setvalueTicket(32.00 * (amountProduct - 1))
-        } else {
-            handleCloseModal()
-        }
-    }
 
     const [valueTicket, setvalueTicket] = useState<number>(32.00)
 
@@ -49,10 +38,30 @@ export default function OpenTicket({ display, togleFloatContainer, NextTicket }:
                 <CleanTicket>Limpar</CleanTicket>
             </NavTicket>
 
-            <BodyContainer width="375px" height="532px" gap="0.1px">
-                <ImageBody src={require("../../common/images/BodyTickets.png")} />
+            <BodyContainer width="375px" height="532px" gap="24px">
+                <AddItensDiv>
+                    <AddItensIcon src={addIcon} />
+                    <AddItensText>
+                        Adicionar mais itens
+                    </AddItensText>
+                </AddItensDiv>
+                <TitleShop>Itens adicionados</TitleShop>
+                {
+                    jsonProducts.map(product => {
+                        if (product.amount > 0) {
+                            return (
+                                <ShopComponent 
+                                    Name={product.product}
+                                    Time={product.time}
+                                    Value={product.value}
+                                    Amount={product.amount}
+                                    Image={product.image}
+                                />
+                            )
+                        }
+                    })
+                }
             </BodyContainer>
-            
             <FooterTicket display="flex" openTicket={NextTicket} text="Continuar" />
 
         </Container>

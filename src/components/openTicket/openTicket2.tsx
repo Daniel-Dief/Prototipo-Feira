@@ -1,7 +1,7 @@
 import { Container, BodyContainer } from "../../common/styles/FloatContainer";
 import { useState } from "react";
 import TimerIconImg from "../../common/images/timer.png"
-import { NavTicket, Title, DownArrow, CleanTicket, ImageBody } from "./style"
+import { NavTicket, Title, DownArrow, CleanTicket } from "./style"
 import FooterTicket from "../FooterTicket";
 import { Button } from "../../common/styles/Button";
 
@@ -51,7 +51,6 @@ export default function OpenTicket2({ display, togleFloatContainer, NextTicket }
             </NavTicket>
 
             <BodyContainer width="375px" height="532px" gap="0.1px">
-                <ImageBody src={require("../../common/images/BodyTicket2.png")} />
             </BodyContainer>
             
             <Button onClick={NextTicket}>

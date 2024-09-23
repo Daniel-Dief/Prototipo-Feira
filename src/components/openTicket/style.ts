@@ -41,8 +41,44 @@ export const CleanTicket = styled.p`
 
 `;
 
-export const ImageBody = styled.img`
-    width: 100%;
-    height: 100%;
-    border-radius: 12px;
+export const AddItensDiv = styled.div`
+    width: 343px;
+    height: 17px;
+    gap: 4px;
+    opacity: 0px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
 `;
+
+export const AddItensIcon = styled.img`
+    width: 16px;
+    height: 16px;
+`;
+
+export const AddItensText = styled.p`
+    width: 138px;
+    height: 17px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 16.94px;
+    text-align: left;
+    color: #C2AE8F;
+`;
+
+export const TitleShop = styled.h1`
+    width: 343px;
+    height: 19px;
+    gap: 0px;
+    opacity: 0px;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 19.36px;
+    text-align: left;
+    color: #18181B;
+`;
+

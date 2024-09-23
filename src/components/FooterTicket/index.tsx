@@ -23,7 +23,7 @@ export default function FooterTicket ({ display, openTicket, text } : FooterTick
             <DivInformations>
                 <DivTextFooter>
                     <Title>Valor total</Title>
-                    <Value>{`R$${value},00 / ${amount} intens`}</Value>
+                    <Value>{`R$${value},00 / ${amount} itens`}</Value>
                 </DivTextFooter>
                 <ButtonAdd onClick={openTicket}>
                     <TextButtonAdd>

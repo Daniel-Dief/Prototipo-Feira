@@ -17,7 +17,6 @@ export default function FloatContainer({ display, togleFloatContainer, id }: Flo
     const jsonProducts = VerifyProducts() as Array<{ id: string; image: string; time: string; value: number, amount: number }>
 
     let [value, setvalue] = useState<number | undefined>(undefined)
-    let [imageUrl, setImageUrl] = useState<string | null>(null);
     
     function CloseTicket() {
         setamountProduct(0)
@@ -39,7 +38,6 @@ export default function FloatContainer({ display, togleFloatContainer, id }: Flo
             const product = jsonProducts.find(product => product.id === id);
             if (product) {
                 setvalue(product.value); 
-                setImageUrl(product.image); 
                 return product.image; 
             }
         }

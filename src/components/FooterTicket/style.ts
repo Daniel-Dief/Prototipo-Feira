@@ -15,6 +15,7 @@ export const DivFooterTickets = styled.div<FooterTicketProps>`
     align-items: center;
     position: fixed;
     bottom: 0;
+    border: 2px solid #F9F7F3
 `;
 
 export const DivInformations = styled.div`
