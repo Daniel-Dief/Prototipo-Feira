@@ -57,9 +57,9 @@ export default function Restaurant() {
     if (modalPage == 1) {
         modalContainer = <FloatContainer id={id} togleFloatContainer={togleFloatContainer} display={displayFloatContainer}/>
     } else if (modalPage == 2) {
-        modalContainer = <OpenTicket display={displayFloatContainer} togleFloatContainer={togleFloatContainer} NextTicket={openTicket2} />
+        modalContainer = <OpenTicket display={!displayFloatContainer} togleFloatContainer={togleFloatContainer} NextTicket={openTicket2} />
     } else if (modalPage == 3) {
-        modalContainer = <OpenTicket2 display={displayFloatContainer} togleFloatContainer={togleFloatContainer} NextTicket={openGuests} />
+        modalContainer = <OpenTicket2 display={!displayFloatContainer} togleFloatContainer={togleFloatContainer} NextTicket={openGuests} />
     }  else if (modalPage == 7) {
         modalContainer = <FiveStepContainer buttonBack={openTicket2} buttonNext={congratulations} togleFloatContainer={togleFloatContainer} display={true}/>
     } else if (modalPage == 8) {

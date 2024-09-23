@@ -22,6 +22,7 @@ export const DivInformations = styled.div`
     height: 40px;
     gap: 12px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     margin: auto;
 
@@ -49,7 +50,7 @@ export const Title = styled.p`
 `;
 
 export const Value = styled.p`
-    width: 140px;
+    width: 190px;
     height: 19px;
     font-family: Inter;
     font-weight: 600;

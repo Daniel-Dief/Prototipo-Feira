@@ -14,7 +14,7 @@ interface FloatContainerProps{
 }
 
 export default function FloatContainer({ display, togleFloatContainer, id }: FloatContainerProps) {
-    const jsonProducts = VerifyProducts() as Array<{ id: string; image: string; time: string; value: number }>
+    const jsonProducts = VerifyProducts() as Array<{ id: string; image: string; time: string; value: number, amount: number }>
 
     let [value, setvalue] = useState<number | undefined>(undefined)
     let [imageUrl, setImageUrl] = useState<string | null>(null);
