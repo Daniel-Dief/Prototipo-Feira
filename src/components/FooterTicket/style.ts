@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 interface FooterTicketProps{
-    display: string;
+    display: boolean;
 }
 
 export const DivFooterTickets = styled.div<FooterTicketProps>`
@@ -10,12 +10,12 @@ export const DivFooterTickets = styled.div<FooterTicketProps>`
     padding: 24px, 16px, 24px, 16px;
     gap: 12px;
     background-color: #FFFFFF;
-    display: ${(props) => props.display};
+    display: ${(props) => props.display ? "flex" : "none"};
     text-align: center;
     align-items: center;
     position: fixed;
     bottom: 0;
-    border: 2px solid #F9F7F3
+    border: 2px solid #F9F7F3;
 `;
 
 export const DivInformations = styled.div`

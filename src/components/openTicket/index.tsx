@@ -4,7 +4,7 @@ import { NavTicket, Title, DownArrow, CleanTicket, AddItensDiv, AddItensIcon, Ad
 import FooterTicket from "../FooterTicket";
 import addIcon from "../../common/images/plus.png";
 import ShopComponent from "../DivShopProducts";
-import { VerifyProducts, ResetProducts, UpdateProducts } from "../../pages/Restaurant/functionsShop";
+import { VerifyProducts, ResetProducts, UpdateProducts, CheckAmount } from "../../pages/Restaurant/functionsShop";
 
 interface FloatContainerProps{
     display: boolean;
@@ -62,7 +62,7 @@ export default function OpenTicket({ display, togleFloatContainer, NextTicket }:
                     })
                 }
             </BodyContainer>
-            <FooterTicket display="flex" openTicket={NextTicket} text="Continuar" />
+            <FooterTicket display={true} openTicket={NextTicket} text="Continuar" />
 
         </Container>
     )

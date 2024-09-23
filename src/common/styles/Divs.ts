@@ -27,7 +27,7 @@ interface ContainerProps {
     flex_direction?: string;
     align_items?: string;
     gap?: string;
-    margin?: string;
+    margin?: boolean;
 }
 
 export const Container = styled.div<ContainerProps>`
@@ -37,7 +37,7 @@ export const Container = styled.div<ContainerProps>`
     gap: ${props => props.gap ? props.gap : "0"};
     flex-direction: ${props => props.flex_direction ? props.flex_direction : "column"};
     justify-content: ${props => props.justify_content ? props.justify_content : "center"};
-    margin-bottom:  ${(props) => props.margin};
+    margin-bottom:  ${(props) => props.margin ? "100px" : "0px"};
 `;
 
 export const IconBoxDiv = styled.div`

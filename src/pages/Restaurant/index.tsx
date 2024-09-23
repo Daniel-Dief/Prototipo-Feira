@@ -10,7 +10,7 @@ import OpenTicket from "../../components/openTicket";
 import OpenTicket2 from "../../components/openTicket/openTicket2";
 import FiveStepContainer from "../../components/FloatContainer/fiveStep";
 import PreCheckin from "../PrecheckinFinish";
-import { VerifyProducts, ResetProducts, UpdateProducts } from "./functionsShop";
+import { VerifyProducts, ResetProducts, UpdateProducts, CheckAmount } from "./functionsShop";
 
 
 
@@ -32,7 +32,6 @@ export default function Restaurant() {
         } else{
             setDisplayFloatContainer(!displayFloatContainer);
         }
-
     }
 
     const [modalPage, setModalPage] = useState<number>(1)
@@ -51,7 +50,7 @@ export default function Restaurant() {
     
     function congratulations() {
         setModalPage(8)
-    }
+    } 
 
     let modalContainer;
     if (modalPage == 1) {
@@ -68,10 +67,12 @@ export default function Restaurant() {
 
     const jsonProducts = VerifyProducts() as Array<{ id: string; image: string; time: string; value: number }>
 
+
+
     return (
         <Container
             gap="12px"
-            margin="16px"
+            margin={CheckAmount()}
         >
             <Header
                 kind="page"
@@ -127,8 +128,8 @@ export default function Restaurant() {
                 }
             </Menu>
             {modalContainer}
-            <Container margin="100px"/>
-            <FooterTicket display="flex" openTicket={openTicket} text="Ver sacola" />
+            <Container margin={CheckAmount()}/>
+            <FooterTicket display={CheckAmount()} openTicket={openTicket} text="Ver sacola" />
         </Container>
     )
 }

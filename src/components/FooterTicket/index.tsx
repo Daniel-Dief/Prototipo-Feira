@@ -2,7 +2,7 @@ import { DivFooterTickets, DivInformations, DivTextFooter, Title, Value, ButtonA
 import { VerifyProducts, ResetProducts, UpdateProducts } from "../../pages/Restaurant/functionsShop";
 
 interface FooterTicketProps { 
-    display: string;
+    display: boolean;
     openTicket: () => void;
     text: string
 }

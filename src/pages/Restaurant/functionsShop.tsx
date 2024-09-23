@@ -120,3 +120,17 @@ export function UpdateProducts ({ id, amountProduct }: UpdateProductsProps) {
         localStorage.setItem('products', JSON.stringify(objJson))
     }
 }
+
+export function CheckAmount () {
+    const jsonProducts = VerifyProducts()
+
+    let display = false
+
+    jsonProducts.forEach(product => {
+        if (product.amount > 0) {
+            display = true
+        }
+    });
+
+    return display
+}
